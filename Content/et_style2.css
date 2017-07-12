@@ -1,0 +1,386 @@
+﻿body, table {
+	font-family: arial;
+	background-color: #c6c6c6;
+	font-size: 13px;
+}
+.black_overlay {
+	display: none;
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	z-index: 1001;
+	min-height: 1000px;
+	-moz-opacity: 0.8;
+	opacity: .80;
+	filter: alpha(opacity=80);
+}
+.white_content {
+	display: none;
+	position: absolute;
+	top: 20%;
+	left: 14%;
+	width: 70%;
+	height: auto;
+	min-width: 768px;
+	padding: 16px;
+	background-color: white;
+	z-index: 1002;
+	overflow: visible;
+}
+#close, #close_mem {
+	margin: -25px -25px 0 0;
+	padding: 5px;
+	float: right;
+	position: relative;
+	display: block;
+	background: #C00;
+	color: #ffffff;
+	width: 15px;
+	height: 15px;
+	text-align: center;
+	text-decoration: none;
+}
+#survey_terms {
+	background: #f9f9f9;
+	box-shadow: 0 0 10px #CCC;
+	height: 240px;
+	overflow: visible;
+	position: fixed;
+	right: -450px;
+	top: 200px;
+	width: 500px;
+	z-index: 500;
+}
+#survey_terms .btn {
+	background: #000;
+	cursor: pointer;
+	float: left;
+	height: 240px;
+	position: relative;
+	width: 50px;
+}
+#survey_terms .btn #close_terms {
+	margin: -10px 37px 0 0;
+	padding: 5px;
+	float: right;
+	position: relative;
+	background: #C00;
+	color: #ffffff;
+	width: 15px;
+	height: 15px;
+	text-align: center;
+	text-decoration: none;
+	display: none;
+}
+#survey_terms .terms_content {
+	padding: 5px 0px;
+	float: right;
+	height: 230px;
+	width: 440px;
+}
+table {
+	background: none !important;
+	padding-bottom: 5px;
+}
+tr {
+	display: none;
+}
+tr span {
+	color: #000000 !important;
+	padding: 2px;
+	display: block;
+}
+td {
+	border: 1px solid #cccccc;
+	display: table-cell;
+	vertical-align: top;
+	width: 14%;
+}
+td select {
+	width: 130px;
+	height: 22px;
+	color: #8d8d8d;
+	border: 1px solid #D8D8D8;
+}
+.flt {
+	float: left;
+}
+.flr {
+	float: right;
+}
+form {
+	float: left;
+}
+.parent_main {
+	width: 1003px;
+	margin: 0px auto;
+	background-color: #fff;
+	padding: 15px;
+	overflow: auto;
+}
+.header {
+	border-bottom: 1px solid #e6e6e6;
+	background-color: #f5f5f5;
+	padding: 10px 10px 3px 10px;
+}
+#header_juxt_logo {
+	float: right;
+	padding-top: 34px
+}
+.content1 {
+	padding: 0 5px;
+	float: left;
+}
+h1 {
+	font-size: 20px;
+	border-bottom: 3px solid #f05523;
+	line-height: 22px;
+	margin: 5px 0;
+}
+.main_item_left {
+	width: 450px;
+	margin: 0px 0px 5px 0px;
+	float: left;
+}
+.main_item_left span {
+	width: 250px;
+	display: inline-block;
+}
+#dob #yearOfBirth {
+	width: 65px !important;
+}
+#dob select {
+	width: 50px !important;
+	margin-right: 3px;
+}
+.main_item_left input[type="radio"] {
+	width: 13px;
+	height: 13px;
+	margin: 0 5px 0 5px;
+}
+.main_item_right {
+	width: 450px;
+	margin: 0px 0px 5px 0px;
+	float: right;
+}
+.main_item_right span {
+	width: 220px;
+	display: inline-block;
+}
+.style_dd {
+	width: 180px !important;
+	height: 22px;
+	color: #8d8d8d;
+	border: 1px solid #D8D8D8;
+}
+.other_location {
+	display: none;
+	width: 100%;
+}
+.location {
+	display: none;
+	width: 100%;
+}
+.content2 {
+	padding: 0 5px;
+	float: left;
+	border-bottom: 1px solid #e5e5e5;
+}
+.content2 h1 {
+	font-size: 20px;
+	color: #000000;
+	border-bottom: 3px solid #f05523;
+	line-height: 25px;
+}
+.content2_l1 {
+	margin: 0px 0px 5px 0px;
+	float: left;
+	width: 100%;
+}
+.content2_l1_span {
+	font-size: 13px;
+	color: #626262;
+	line-height: 18px;
+	width: 81%;
+	float: left;
+}
+.content2_l1 p {
+	margin: 0px 0px 2px 0px;
+	font-size: 12px !important;
+}
+.content2 input[type="text"] {
+	width: 150px;
+	margin-right: 18px;
+}
+.content2_l1_female {
+	float: left;
+	margin-left: 10px;
+}
+.content2_l1_input1 {
+	width: 20px !important;
+	height: 19px !important;
+	float: left;
+	border-left: none;
+	border-right: none;
+	border-top: 1px solid #c6c6c6;
+	border-bottom: 1px solid #c6c6c6;
+	padding: 1px 3px 0px 6px;
+	margin: 0px !important;
+}
+.span_minus {
+	float: left;
+	background-image: url('http://economictimes.indiatimes.com/photo/45860350.cms');
+	width: 20px;
+	height: 19px;
+	cursor: pointer;
+}
+.span_add {
+	float: left;
+	background-image: url('http://economictimes.indiatimes.com/photo/45860352.cms');
+	width: 20px;
+	height: 19px;
+	cursor: pointer;
+}
+.span_percentage {
+	font-size: 17px;
+	font-weight: 700;
+	color: #010000;
+}
+.span_percentage label {
+	margin-right: 90px;
+}
+.content2_li_right_span {
+	font-size: 17px;
+	font-weight: 700;
+	float: left;
+}
+#content2_li_right {
+	margin: 0px 0px 15px 0px;
+	float: right;
+	width: 30%;
+}
+.content3 {
+	padding: 0px 5px;
+	;
+	float: left;
+	border-bottom: 1px solid #e5e5e5;
+}
+.content3 div {
+	margin: 5px 0px 5px 0px;
+	float: left;
+	width: 33%;
+}
+.content3 select {
+	width: 270px !important;
+	height: 22px;
+	color: #8d8d8d;
+	border: 1px solid #D8D8D8;
+	float: left;
+	margin-left: 5px;
+}
+.content3 input[type="text"] {
+	width: 115px;
+	margin-right: 5px;
+}
+.p_bold {
+	width:100%;
+	font-size: 16px !important;
+	float: left;
+	font-weight: 700;
+	margin:5px 0;
+}
+.content3_span1 {
+	padding: 3px 26px 0px 0px;
+	float:left;
+}
+.content3_span {
+	border: 1px solid #A9A9A9;
+	font-weight: 700;
+	padding: 2px 0px 2px 3px;
+	float: left;
+	margin: 0px 5px 0px 0px;
+	width: 32px;
+}
+.submit_btn {
+	background-image: url('http://economictimes.indiatimes.com/photo/45860351.cms');
+	float: right;
+	height: 36px;
+	width: 72px;
+	margin-top: 20px;
+	cursor: pointer;
+}
+#country_options {
+	left: 428px;
+	float: left;
+}
+#company_options, #designation_options {
+	margin-left: 220px;
+	float: right;
+}
+.options {
+	display: none;
+	position: absolute;
+	background: #fff;
+	border: 1px solid #ccc;
+	overflow-y: scroll;
+	height: 180px;
+	min-width: 180px;
+}
+.options ul {
+	padding: 0px 5px;
+	margin: 5px 0px;
+}
+.options li {
+	list-style: none;
+	cursor: pointer;
+}
+.options li:hover, .active {
+	background-color: #CCC;
+}
+.content_top {
+	padding: 10px 5px;
+	float: left;
+}
+.content_top div {
+	margin: 5px 0px 5px 0px;
+	float: left;
+	width: 40%;
+}
+.white_content h1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 21px;
+	color: #000000;
+	border: none;
+}
+.white_content p {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: 14px;
+	color: #626262;
+	margin: 10px 0;
+}
+.content_thank{
+	text-align:center;
+	padding:20px 0;
+	border-bottom:3px solid #f05523;
+	}
+.content_thank h1{
+	font-size: 20px;
+	border:none;
+	}
+.content_thank p{
+	line-height:24px;
+	font-size:14px;
+	}
+.content_thank_fb{
+	text-align: center;
+color: #3b5998;
+padding: 20px 0;
+float: left;
+width: 100%;
+	}
+body {
+}
