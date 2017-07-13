@@ -18,7 +18,10 @@ body{ font-family:arial; background:#c6c6c6;}
 .form-control{
     color:#8d8d8d !important;
 }
-.mtb10{ margin:5px 0 0 0;}
+.mtb10{ margin:5px 0 0 0}
+.mtb11{
+    margin-left:5px;
+}
 .container {
     background-color: #fff;
     padding: 15px;
@@ -803,7 +806,7 @@ p.text-align{ margin:0px;}
 label { font-weight:normal;}
 
 .form-border { 
-    /*border-bottom:1px solid #eee;*/ 
+    border-bottom:1px solid #eee;
     padding:0 0 5px 0;
 
 }
@@ -1068,4 +1071,10 @@ label {
 	font-weight:600;
 	line-height:14px;
 	color:#85bd38;
+}
+
+.form-group h6{
+    font-weight: bold;
+    text-align: center;
+    text-decoration: underline;
 }
