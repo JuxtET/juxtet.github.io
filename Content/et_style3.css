@@ -806,7 +806,7 @@ p.text-align{ margin:0px;}
 label { font-weight:normal;}
 
 .form-border { 
-    border-bottom:1px solid #eee;
+    border-bottom:2px solid #fff;
     padding:0 0 5px 0;
 
 }
