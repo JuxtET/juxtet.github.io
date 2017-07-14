@@ -808,7 +808,6 @@ label { font-weight:normal;}
 .form-border { 
     border-bottom:2px solid #fff;
     padding:0 0 5px 0;
-
 }
 .red_border h1 {
     border-bottom: 3px solid rgb(240, 85, 35);
@@ -1077,4 +1076,9 @@ label {
     font-weight: bold;
     text-align: center;
     text-decoration: underline;
+}
+
+br{
+    padding: 0px;
+    margin: 0px;
 }

@@ -1,23 +1,83 @@
 ﻿$(function () {
 
     $('.appendTextBox').hide();
-    $("#802").hide();
-    $('#804').hide();
-    $('#805').hide();
-    $('#806').hide();
-    $('#807').hide();
-    $('#808').hide();
-    $('#809').hide();
-    $('#810').hide();
-    $('#811').hide();
-    $('#812').hide();
-    $('#813').hide();
-    $('#814').hide();
-    $('#815').hide();
-    $('#816').hide();
-    $('#817').hide();
+    $('.hideit').hide();
+    $("#Q802").hide();
+    $('#Q804').hide();
+    $('#Q805').hide();
+    $('#Q806').hide();
+    $('#Q807').hide();
+    $('#Q808').hide();
+    $('#Q809').hide();
+    $('#Q810').hide();
+    $('#Q811').hide();
+    $('#Q812').hide();
+    $('#Q813').hide();
+    $('#Q814').hide();
+    $('#Q815').hide();
+    $('#Q816').hide();
+    $('#Q817').hide();
+
+    $("#Q801_D1").trigger("change");
+    $("#Q808_D1").trigger("change");
 
 
+    // =======================================================
+    // ============== Jquery Click Event Code ================
+    // =======================================================
+
+    $(document).on('change', '#Q801_D1', function () {
+        $selectedValue = $('#Q801_D1').val();
+        $selectedValueQ601_D2 = $('#Q801_D2').val();
+
+        if ($selectedValue != 0 && $selectedValue != 1) {
+            $('.hideit').show();
+            $("#Q802").show();
+            $('#Q804').show();
+            $('#Q805').show();
+            $('#Q806').show();
+            $('#Q807').show();
+            $('#Q808').show();
+            $('#Q810').show();
+            $('#Q811').show();
+            $('#Q812').show();
+            $('#Q813').show();
+            $('#Q814').show();
+            $('#Q815').show();
+            $('#Q816').show();
+            $('#Q817').show();
+        }
+        else {
+            $('.hideit').hide();
+            $("#Q802").hide();
+            $('#Q804').hide();
+            $('#Q805').hide();
+            $('#Q806').hide();
+            $('#Q807').hide();
+            $('#Q808').hide();
+            $('#Q809').hide();
+            $('#Q810').hide();
+            $('#Q811').hide();
+            $('#Q812').hide();
+            $('#Q813').hide();
+            $('#Q814').hide();
+            $('#Q815').hide();
+            $('#Q816').hide();
+            $('#Q817').hide();
+        }
+
+    })
+
+    $(document).on('change', '#Q808_D1', function () {
+        $selectedValue = $('#Q808_D1').val();
+
+        if ($selectedValue != 0 && $selectedValue != 1) {
+            $('#Q809').show();
+        }
+        else {
+            $('#Q809').hide();
+        }
+    })
 
 });
 
