@@ -1078,7 +1078,7 @@ label {
     text-decoration: underline;
 }
 
-br{
-    padding: 0px;
-    margin: 0px;
+section.row{
+    margin-left: 0px;
+    margin-right: 0px;
 }
