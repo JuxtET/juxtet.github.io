@@ -58,7 +58,7 @@
                                 <option value="9">8</option>
                                 <option value="10">9</option>
                                 <option value="11">10</option>
-                                <option value="12">> 10 times</option>
+                                <option value="12">More than 10 times</option>
                             </select>
                         </section>
                         <section class="form-group col-md-4 col-xs-12 col-sm-4">
@@ -75,7 +75,7 @@
                                 <option value="9">8</option>
                                 <option value="10">9</option>
                                 <option value="11">10</option>
-                                <option value="12">> 10 times</option>
+                                <option value="12">More than 10 times</option>
                             </select>
                         </section>
                 </section>
@@ -123,7 +123,7 @@
                 <section class="row form-border">
                     <section id="Q804" class="form-group col-md-4 col-xs-12 col-sm-4">
                         <select class="style_dd form-control" name="Q804" id="Q804_D1" required="">
-                            <option value="0">Main reason for selecting the Place you visited?</option>
+                            <option value="0">Main reason for selecting the place you visited?</option>
                             <option value="1">It is a good place to go to with children</option>
                             <option value="2">I heard of the place for long so really wanted to see it.</option>
                             <option value="3">I started thinking about this place after seeing an article/write up/book</option>
@@ -133,25 +133,24 @@
                             <option value="7">It is one of the places I could afford within the budget I had</option>
                             <option value="8">It is one of the places I could manage within the time I had</option>
                             <option value="9">I saw a good deal /package</option>
-                            <option value="10" class="appendTextBox">Others</option>
+                            <option value="98">Others</option>
                         </select>
-                        <div id="mainreason_otherdiv" style="margin-left: 12px; margin-bottom: 10px; display: none;">
+                        <input type="text" name="Q804_1_text" class="Q804_D1 appendTextBox user-success" style="display: none;"/>
+                        <!--<div id="mainreason_otherdiv" style="margin-left: 12px; margin-bottom: 10px; display: none;">
                             <input type="text" name="mainreason_othertxt" id="mainreason_othertxt" placeholder="Other reason">
-                        </div>
+                        </div>-->
                     </section>
                     <section id="Q805" class="form-group col-md-4 col-xs-12 col-sm-4">
                         <select class="style_dd form-control" name="Q805" id="Q805_D1" required="">
-                            <option value="0">Occasion ?</option>
+                            <option value="0">Occasion?</option>
                             <option value="1">Honeymoon</option>
                             <option value="2">Children’s vacation</option>
                             <option value="3">Relaxation/Unwind/De-stress</option>
                             <option value="4">Family outing</option>
                             <option value="5">Anniversary</option>
-                            <option value="6" class="appendTextBox">Others (Text Box)</option>
+                            <option value="98">Others</option>
                         </select>
-                        <div id="occassion_otherdiv" style="margin-left: 12px; margin-bottom: 10px; display: none;">
-                            <input type="text" name="occassion_othertxt" id="occassion_othertxt" placeholder="Other Occassion">
-                        </div>
+                        <input type="text" name="Q805_1_text" class="Q805_D1 appendTextBox user-success" style="display: none;" />
                     </section>
                     <section id="Q806" class="form-group col-md-4 col-xs-12 col-sm-4">
                         <select class="style_dd form-control" name="Q806" id="Q806_D1" required="">
@@ -216,9 +215,10 @@
                             <section class="checkbox">
                                 <label class="checkbox-inline">
                                     <input type="checkbox" name="Q807_98" id="Q807_C98" class="checkbox Q807" value="1">
-                                    Others (Text Box)
+                                    Others
                                 </label>
                             </section>
+                            <input type="text" name="Q807_text" class="Q807_C98 appendTextBox" style="display: none;">
                         </section>
                     </section>
 
@@ -243,7 +243,7 @@
                             <section class="checkbox">
                                 <label class="checkbox-inline">
                                     <input type="checkbox" name="Q807_8" id="Q807_C8" class="checkbox Q807" value="1">
-                                    Adventure Activities(Sports, etc.)
+                                    Adventure activities(Sports, etc.)
                                 </label>
                             </section>
                         </section>
@@ -259,7 +259,7 @@
                             <section class="checkbox">
                                 <label class="checkbox-inline">
                                     <input type="checkbox" name="Q807_10" id="Q807_C10" class="checkbox Q807" value="1">
-                                    River Rafting
+                                    River rafting
                                 </label>
                             </section>
                         </section>
@@ -278,7 +278,7 @@
                             <section class="checkbox">
                                 <label class="checkbox-inline">
                                     <input type="checkbox" name="Q807_6" id="Q807_C6" class="checkbox Q807" value="1">
-                                    Pilgrimage/Religious
+                                    Pilgrimage/religious
                                 </label>
                             </section>
                         </section>
@@ -290,7 +290,7 @@
                                 </label>
                             </section>
                         </section>
-                        <section class="form-group">
+                        <!--<section class="form-group">
                             <section class="checkbox">
                                 <label class="checkbox-inline">
                                     <input type="checkbox" name="Q807_13" id="Q807_C13" class="checkbox Q807" value="1">
@@ -305,7 +305,7 @@
                                     Shopping
                                 </label>
                             </section>
-                        </section>
+                        </section>-->
                     </section>
                 </section>
 
@@ -320,14 +320,15 @@
                     <section id="Q808">
                         <section class="form-group col-md-4 col-sm-4 col-xs-12">
                             <select class="style_dd form-control" name="Q808" id="Q808_D1" required="">
-                                <option value="0" style="font-weight:bold;">Went With Whom?</option>
+                                <option value="0">Went with whom?</option>
                                 <option value="1">Went Alone</option>
                                 <option value="2">With my Family Only</option>
                                 <option value="3">With my Extended Family Only</option>
                                 <option value="4">With Family & Friends Only</option>
                                 <option value="5">With Friends Only</option>
-                                <option value="98">Others (Text Box)</option>
+                                <option value="98">Others</option>
                             </select>
+                            <input type="text" name="Q808_1_text" class="Q808_D1 appendTextBox user-success" style="display: none;" />
                         </section>
                     </section>
                     <section id="Q809">
@@ -350,7 +351,7 @@
                     <section id="Q810">
                         <section class="form-group col-md-4 col-sm-4 col-xs-12">
                             <select class="style_dd form-control" name="Q810" id="Q810_D1" required="">
-                                <option value="0">Total expenditure</option>
+                                <option value="0">Total expenditure?</option>
                                 <option value="1">< Rs.5K</option>
                                 <option value="2">Rs.5-10K</option>
                                 <option value="3">Rs.10-25K</option>
@@ -358,68 +359,39 @@
                                 <option value="5">Rs.50K-1 Lakh</option>
                                 <option value="6">Rs.1-2 Lakhs</option>
                                 <option value="7">Rs.2-5 Lakhs</option>
-                                <option value="8">> Rs.5 Lakhs</option>
+                                <option value="8">More than Rs.5 Lakhs</option>
                             </select>
                         </section>
                     </section>
                 </section>
 
-                <!--Sample Q11,12-->
-                <section class="row form-border" style="margin-top:10px;">
-                    <section id="Q811" class="col-md-4 col-sm-4 col-xs-12">
-                        <div class="dropdown" name="Q811" id="Q811_D1" required="">
-                            <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Main Source of Funds? <span class="caret"></span>
-                            </button>   
-                            <ul class="dropdown-menu" style="width:100%">
-                                <li><a data-value="Using Savings" data-option="1">Using Savings</a></li>
-                                <li><a data-value="Taking out a personal loan" data-option="2">Taking out a personal loan</a></li>
-                                <li><a data-value="Used a credit card – paid up as EMIs" data-option="3">Used a credit card – paid up as EMIs</a></li>
-                                <li><a data-value="Used a credit card – paid up later one time" data-option="4">Used a credit card – paid up later one time</a></li>
-                                <li><a data-value="Using travelling allowance/reward points" data-option="5">Using travelling allowance/reward points</a></li>
-                                <li><a data-value="Others (Text Box)" data-option="6">Others (Text Box)</a></li>
-                            </ul>
-                        </div>
-                    </section>
-                    <section id="Q812" class="col-md-4 col-sm-4 col-xs-12">
-                        <div class="dropdown" name="Q811" id="Q811_D1" required="">
-                            <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Type of Vacation?<span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu" style="width:100%">
-                                <li><a data-value="Standard Package" data-option="1">Standard Package</a></li>
-                                <li><a data-value="Customised package" data-option="2">Customised package</a></li>
-                                <li><a data-value="Self-Planned" data-option="3">Self-Planned</a></li>
-                            </ul>
-                        </div>
-                    </section>
-                    <section class="col-md-4 col-sm-4 col-xs-12"></section>
-                </section>
+                
 
 
                 <!--Q11,12-->
-                <!--<section class="row form-border" style="margin-top:10px;">
+                <section class="row form-border" style="margin-top:10px;">
                     <section id="Q811" class="col-md-4 col-sm-4 col-xs-12">
                         <select class="style_dd form-control" name="Q811" id="Q811_D1" required="">
-                            <option value="0">Main Source of Funds?</option>
-                            <option value="1">Using Savings</option>
+                            <option value="0">Main source of funds?</option>
+                            <option value="1">Using savings</option>
                             <option value="2">Taking out a personal loan</option>
                             <option value="3">Used a credit card – paid up as EMIs</option>
                             <option value="4">Used a credit card – paid up later one time</option>
                             <option value="5">Using travelling allowance/reward points</option>
-                            <option value="98" class="appendTextBox">Others (Text Box)</option>
+                            <option value="98">Others</option>
                         </select>
+                        <input type="text" name="Q811_1_text" class="Q811_D1 appendTextBox user-success" style="display: none;" />
                     </section>
                     <section id="Q812" class="col-md-4 col-sm-4 col-xs-12">
                         <select class="style_dd form-control" name="Q812" id="Q812_D1" required="">
-                            <option value="0">Type of Vacation?</option>
-                            <option value="1">Standard Package</option>
+                            <option value="0">Type of vacation?</option>
+                            <option value="1">Standard package</option>
                             <option value="2">Customised package</option>
-                            <option value="3">Self-Planned</option>
+                            <option value="3">Self-planned</option>
                         </select>
                     </section>
                     <section class="col-md-4 col-sm-4 col-xs-12"></section>
-                </section>-->
+                </section>
 
                 <!--Q13--->
                 <section class="row H813">
@@ -433,7 +405,7 @@
                             <section class="checkbox">
                                 <label class="checkbox-inline">
                                     <input type="checkbox" name="Q813_1" id="Q813_C1" class="checkbox Q813" value="1">
-                                    Hotel/Resort
+                                    Hotel/resort
                                 </label>
                             </section>
                         </section>
@@ -441,9 +413,10 @@
                             <section class="checkbox">
                                 <label class="checkbox-inline">
                                     <input type="checkbox" name="Q813_4" id="Q813_C4" class="checkbox Q813" value="1">
-                                    Holiday Home
+                                    Holiday home
                                 </label>
                             </section>
+
                         </section>
                         <section class="form-group">
                             <section class="checkbox">
@@ -460,7 +433,7 @@
                             <section class="checkbox">
                                 <label class="checkbox-inline">
                                     <input type="checkbox" name="Q813_2" id="Q813_C2" class="checkbox Q813" value="1">
-                                    Guest House
+                                    Guest house
                                 </label>
                             </section>
                         </section>
@@ -475,10 +448,11 @@
                         <section class="form-group">
                             <section class="checkbox">
                                 <label class="checkbox-inline">
-                                    <input type="checkbox" name="Q813_98" id="Q813_C98`" class="checkbox Q813" value="1">
-                                    Others (Text Box)
+                                    <input type="checkbox" name="Q813_98" id="Q813_C98" class="checkbox Q813" value="1">
+                                    Others
                                 </label>
                             </section>
+                            <input type="text" name="Q813_text" class="Q813_C98 appendTextBox" style="display: none;">
                         </section>
                     </section>
 
@@ -487,7 +461,7 @@
                             <section class="checkbox">
                                 <label class="checkbox-inline">
                                     <input type="checkbox" name="Q813_3" id="Q813_C3" class="checkbox Q813" value="1">
-                                    Home Stay
+                                    Home stay
                                 </label>
                             </section>
                         </section>
@@ -495,7 +469,7 @@
                             <section class="checkbox">
                                 <label class="checkbox-inline">
                                     <input type="checkbox" name="Q813_6" id="Q813_C6" class="checkbox Q813" value="1">
-                                    Bed & Breakfast
+                                    Bed & breakfast
                                 </label>
                             </section>
                         </section>
@@ -513,22 +487,22 @@
                     <section id="Q814" class="form-group col-md-4 col-sm-4 col-xs-12">
                         <select class="style_dd form-control" name="Q814" id="Q814_D1" required="">
                             <option value="0">How did you travel to and from the destination?</option>
-                            <option value="1">By Flight</option>
-                            <option value="2">By Train</option>
-                            <option value="3">By Road</option>
+                            <option value="1">By flight</option>
+                            <option value="2">By train</option>
+                            <option value="3">By road</option>
                             <option value="4">Own vehicle</option>
                         </select>
                     </section>
                     <section id="Q815" class="form-group col-md-4 col-sm-4 col-xs-12">
                         <select class="style_dd form-control" name="Q815" id="Q815_D1" required="">
-                            <option value="0">Did you Pre-book Activities? (Like guided tours etc.) </option>
+                            <option value="0">Did you pre-book activities? (like guided tours etc.) </option>
                             <option value="1">Yes</option>
                             <option value="2">No</option>
                         </select>
                     </section>
                     <section id="Q816" class="form-group col-md-4 col-sm-4 col-xs-12">
                         <select class="style_dd form-control" name="Q816" id="Q816_D1" required="">
-                            <option value="0">Overall Experience?</option>
+                            <option value="0">Overall experience?</option>
                             <option value="1">Much better than expected</option>
                             <option value="2">Somewhat better than expected</option>
                             <option value="3">Just as expected</option>
@@ -707,7 +681,7 @@
                             <section class="checkbox">
                                 <label class="checkbox-inline">
                                     <input type="checkbox" name="Q817_19" id="Q817_C19" class="checkbox Q817" value="1">
-                                    Expensive Tour Guide
+                                    Expensive tour guide
                                 </label>
                             </section>
                         </section>
@@ -739,21 +713,22 @@
                             <section class="checkbox">
                                 <label class="checkbox-inline">
                                     <input type="checkbox" name="Q817_98" id="Q817_C98" class="checkbox Q817" value="1">
-                                    Others (Text Box)
+                                    Others
                                 </label>
                             </section>
+                            <input type="text" name="Q817_text" class="Q817_C98 appendTextBox" style="display: none;">
                         </section>
                     </section>
                 </section>
 
-                <!----------------------------------------------END Sec1-------------------------------------------->
+                <!-------------------------------------------END Domestic Section-------------------------------------------->
                 
-                <!--Hotel Booking-->
+                <!--------------------------------------------Hotel Booking------------------------------------------>
                 <section id="sectionHotel">
 
-                    <section class="row hideit">
+                    <section class="row hotel_header hideit">
                         <div class="col-md-12 col-xs-12 col-sm-12">
-                            <h1 class="red_border">Thinking about hotel booking for your last vacation in India, answer the following:</h1>
+                            <p>Thinking about hotel booking for your last vacation in India, answer the following:</p>
                         </div>
                     </section>
 
@@ -774,8 +749,9 @@
                                 <option value="2">Spouse</option>
                                 <option value="3">Parents</option>
                                 <option value="4">Friends/ Relatives</option>
-                                <option value="5">Others (open text box)</option>
+                                <option value="5">Others</option>
                             </select>
+                            <input type="text" name="Q819_1_text" class="Q819_D1 appendTextBox user-success" style="display: none;" />
                         </section>
                         <section id="Q820" class="form-group col-md-4 col-sm-4 col-xs-12">
                             <select class="style_dd form-control" name="Q820" id="Q820_D1" required="">
@@ -790,21 +766,7 @@
                     </section>
 
                     <!--Q21,22,23-->
-                    <section class="row" style="margin-top:10px;">
-                        <!--<section id="Q821" class="form-group col-md-4 col-sm-4 col-xs-12">
-            <div class="btn-group">
-                <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Large button <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li role="separator" class="divider"></li>
-                    <li><a href="#">Separated link</a></li>
-                </ul>
-            </div>
-            </section>-->
+                    <section class="row form-border" style="margin-top:10px;">
                         <section id="Q821" class="form-group col-md-4 col-sm-4 col-xs-12">
                             <select class="style_dd form-control" name="Q821" id="Q821_D1" required="">
                                 <option value="">How was the hotel/stay booked?</option>
@@ -829,25 +791,25 @@
                                 <option value="3">I do things online but I have a regular agent whom I always use</option>
                                 <option value="4">I do not like to plan things in advance</option>
                                 <option value="5">Got a better deal offline</option>
-                                <option value="98">Others (open text box)</option>
+                                <option value="98">Others</option>
                             </select>
+                            <input type="text" name="Q822_1_text" class="Q822_D1 appendTextBox user-success" style="display: none;" />
                         </section>
                         <section id="Q823" class="form-group col-md-4 col-sm-4 col-xs-12">
                             <select class="style_dd form-control" name="Q823" id="Q823_D1" required="">
-                                <optgroup label="Which website/app used for hotel booking">
-                                    <option value="1">NEED DATA</option>
-                                </optgroup>
+                                <option value="0">Which website/app used for hotel booking?</option>
+                                <option value="1">NEED DATA</option>
                             </select>
                         </section>
                     </section>
 
                     <!--Q24-->
-                    <section class="row form-border H824">
+                    <section class="row H824">
                         <section class="col-md-12 col-sm-12 col-xs-12 mtb10">
                             <p>Why did you use this website/app?</p>
                         </section>
                     </section>
-                    <section id="Q824" class="row checkboxwidth">
+                    <section id="Q824" class="row form-border checkboxwidth">
                         <section class="col-md-4 col-sm-4">
                             <section class="form-group">
                                 <section class="checkbox">
@@ -940,6 +902,72 @@
                                     <label class="checkbox-inline">
                                         <input type="checkbox" name="Q824_11" id="Q824_C11" class="checkbox Q824" value="11">
                                         I have the app on my phone
+                                    </label>
+                                </section>
+                            </section>
+                        </section>
+                    </section>
+
+                    <!--Q25-->
+                    <section class="row H825">
+                        <section class="col-md-12 col-sm-12 col-xs-12 mtb10">
+                            <p>Which travel websites have you ever visited for:</p>
+                        </section>
+                    </section>
+                    <section id="Q825" class="row form-border checkboxwidth">
+                        <section class="col-md-4 col-sm-4">
+                            <h6>Hotel research?</h6>
+                            <section class="form-group">
+                                <section class="checkbox">
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="Q825_1" id="Q825_C1" class="checkbox Q825" value="1">
+                                        Key hotel review websites
+                                    </label>
+                                </section>
+                            </section>
+                            <section class="form-group">
+                                <section class="checkbox">
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="Q825_1_98" id="Q825_1_C98" class="checkbox Q825" value="1">
+                                        Others
+                                    </label>
+                                </section>
+                                <input type="text" name="Q825_1_text" class="Q825_1_C98 appendTextBox" style="display: none;">
+                            </section>
+                            <section class="form-group">
+                                <section class="checkbox">
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="Q825_2" id="Q825_C2" class="checkbox Q825" value="1">
+                                        None
+                                    </label>
+                                </section>
+                            </section>
+                        </section>
+
+                        <section class="col-md-4 col-sm-4">
+                            <h6>Hotel booking?</h6>
+                            <section class="form-group">
+                                <section class="checkbox">
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="Q825_11" id="Q825_C11" class="checkbox Q825" value="1">
+                                        Key hotel review websites
+                                    </label>
+                                </section>
+                            </section>
+                            <section class="form-group">
+                                <section class="checkbox">
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="Q825_2_98" id="Q825_2_C98" class="checkbox Q825" value="1">
+                                        Others
+                                    </label>
+                                </section>
+                                <input type="text" name="Q825_2_text" class="Q825_2_C98 appendTextBox" style="display: none;">
+                            </section>
+                            <section class="form-group">
+                                <section class="checkbox">
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="Q825_12" id="Q825_C12" class="checkbox Q825" value="1">
+                                        None
                                     </label>
                                 </section>
                             </section>

@@ -4,6 +4,13 @@
     $('.H817').hide();
     $('#sectionHotel').hide();
 
+    if (!($('.form-border').hasClass('bottom-border'))) {
+        $('.form-border').addClass('bottom-border');
+    }
+    else {
+        $('.form-border').removeClass('bottom-border');
+    }
+
     $(".dropdown-menu li a").click(function () {
         $(this).parents(".dropdown").find('.btn').html($(this).text() + '<span class="caret"></span>');
         $(this).parents(".dropdown").find('.btn').val($(this).data('value'));
@@ -24,6 +31,10 @@
         $selectedValueQ801_D2 = $('#Q801_D2').val();
 
         if ($selectedValue != 0 && $selectedValue != 1) {
+
+            if(!($('.form-border').hasClass('bottom-border'))){
+                $('.form-border').addClass('bottom-border');
+            }
             $('.hideit').show();
             $("#Q802").show();
             $('#Q804').show();
@@ -70,6 +81,7 @@
             $('.H824').hide();
         }
         else {
+            $('.form-border').removeClass('bottom-border');
             $('.hideit').hide();
             $("#Q802").hide();
             $('#Q804').hide();
@@ -157,6 +169,79 @@
                 $('#sectionHotel').show();
         }
     });
+
+    // =======================================================
+    // ================== Generate Textbox ===================
+    // =======================================================
+
+    $(document).on('click', '#Q807_C98', function () {
+        generateTextBox('Q807_C98');
+    });
+
+    $(document).on('click', '#Q813_C98', function () {
+        generateTextBox('Q813_C98');
+    });
+
+    $(document).on('click', '#Q817_C98', function () {
+        generateTextBox('Q817_C98');
+    });
+
+    $(document).on('click', '#Q825_1_C98', function () {
+        generateTextBox('Q825_1_C98');
+    });
+
+    $(document).on('click', '#Q825_2_C98', function () {
+        generateTextBox('Q825_2_C98');
+    });
+
+    ///////////////Dropdown//////////////
+
+    $(document).on('click', '#Q804_D1', function () {
+        generateTextBoxForDropDown('Q804_D1', '98');
+    });
+
+    $(document).on('click', '#Q805_D1', function () {
+        generateTextBoxForDropDown('Q805_D1', '98');
+    });
+
+    $(document).on('click', '#Q808_D1', function () {
+        generateTextBoxForDropDown('Q808_D1', '98');
+    });
+
+    $(document).on('click', '#Q811_D1', function () {
+        generateTextBoxForDropDown('Q811_D1', '98');
+    });
+
+    $(document).on('click', '#Q819_D1', function () {
+        generateTextBoxForDropDown('Q819_D1', '98');
+    });
+
+    $(document).on('click', '#Q822_D1', function () {
+        generateTextBoxForDropDown('Q822_D1', '98');
+    });
+
+    // =======================================================
+    // ==================== Functions ========================
+    // =======================================================
+
+    function generateTextBox($source) {
+        if ($('#' + $source).prop("checked") == true) {
+            $('.' + $source).show();
+        }
+        else {
+            $('.' + $source).hide();
+        }
+    }
+
+    function generateTextBoxForDropDown($source, $value) {
+        $selectedValue = $('#' + $source).val();
+        if ($selectedValue == $value) {
+            $('.' + $source).show();
+        }
+        else {
+            $('.' + $source).hide();
+        }
+    }
 
 });
 

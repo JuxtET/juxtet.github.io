@@ -806,8 +806,8 @@ p.text-align{ margin:0px;}
 label { font-weight:normal;}
 
 .form-border { 
-    /*border-bottom:1px solid #eee;*/
-    padding:0 0 5px 0;
+    /*border-bottom:1px solid #eee;
+    padding:0 0 5px 0;*/
 }
 .red_border h1 {
     border-bottom: 3px solid rgb(240, 85, 35);
@@ -1091,4 +1091,19 @@ ul li a{
     cursor:pointer;
 }
 
+.hotel_header{
+    margin: 8px 0;
+}
+
+.hotel_header p{
+    font-size: 18px;
+}
+.appendTextBox{
+    margin: 2px;
+}
+
+.bottom-border{
+        border-bottom:1px solid #eee;
+    padding:0 0 5px 0;
+}
 
