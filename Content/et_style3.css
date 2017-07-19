@@ -1098,6 +1098,15 @@ ul li a{
 .hotel_header p{
     font-size: 18px;
 }
+
+.Ticket_header{
+    margin: 8px 0;
+}
+
+.Ticket_header p{
+    font-size: 18px;
+}
+
 .appendTextBox{
     margin: 2px;
 }
