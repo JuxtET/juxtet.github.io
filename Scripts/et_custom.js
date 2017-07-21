@@ -283,8 +283,412 @@
     //});
 
 
+    hotelSites = [
+        'MakeMyTrip',
+        'Thomas Cook',
+        'Tripadvisor',
+        'Ixigo',
+        'Expedia',
+        'Paytm',
+        'ClearTrip',
+        'Yatra',
+        'Travelchacha',
+        'Airbnb',
+        'Goibibo',
+        'OYO rooms',
+        'Trivago'
+    ]
 
+    var hotelSitesArr = [];
 
+    $(document).on('click', '.Q826', function () {
+        var Q826 = $('input:checkbox:checked.Q826').map(function () {
+            return this.value;
+        }).get();
+        if (this.checked == true) {
+            if (hotelSitesArr.indexOf(this.value) == -1) {
+                hotelSitesArr.push(this.value);
+            }
+        }
+        else if (this.checked == false) {
+            var index = hotelSitesArr.indexOf(this.value);
+            if (index > -1) {
+                hotelSitesArr.splice(index, 1);
+            }
+        }
+    });
+
+    $("#Q826_D1").on("click", function () {
+        $(this).find("option:not(:first)").remove();
+        var myselect = $('<select>');
+        $.each(hotelSitesArr, function (i, p) {
+            console.log(p);
+            myselect.append($('<option></option>').val(i + 1).text(hotelSites[p - 1]));
+        });
+        $('#Q826_D1').append(myselect.html());
+    });
+
+    $("#Q826_D2").on("click", function () {
+        $(this).find("option:not(:first)").remove();
+        var myselect = $('<select>');
+        $.each(hotelSitesArr, function (i, p) {
+            console.log(p);
+            myselect.append($('<option></option>').val(i + 1).text(hotelSites[p - 1]));
+        });
+        $('#Q826_D2').append(myselect.html());
+    });
+
+    $("#Q826_D3").on("click", function () {
+        console.log('populating data');
+        console.log(travelSitesArr);
+        $(this).find("option:not(:first)").remove();
+        var myselect = $('<select>');
+        $.each(hotelSitesArr, function (i, p) {
+            console.log(p);
+            myselect.append($('<option></option>').val(i + 1).text(hotelSites[p - 1]));
+        });
+        $('#Q826_D3').append(myselect.html());
+    });
+
+    $("#Q826_D4").on("click", function () {
+        console.log('populating data');
+        console.log(travelSitesArr);
+        $(this).find("option:not(:first)").remove();
+        var myselect = $('<select>');
+        $.each(hotelSitesArr, function (i, p) {
+            console.log(p);
+            myselect.append($('<option></option>').val(i + 1).text(hotelSites[p - 1]));
+        });
+        $('#Q826_D4').append(myselect.html());
+    });
+
+    $("#Q826_D5").on("click", function () {
+        console.log('populating data');
+        console.log(travelSitesArr);
+        $(this).find("option:not(:first)").remove();
+        var myselect = $('<select>');
+        $.each(hotelSitesArr, function (i, p) {
+            console.log(p);
+            myselect.append($('<option></option>').val(i + 1).text(hotelSites[p - 1]));
+        });
+        $('#Q826_D5').append(myselect.html());
+    });
+
+    $("#Q826_D6").on("click", function () {
+        console.log('populating data');
+        console.log(travelSitesArr);
+        $(this).find("option:not(:first)").remove();
+        var myselect = $('<select>');
+        $.each(hotelSitesArr, function (i, p) {
+            console.log(p);
+            myselect.append($('<option></option>').val(i + 1).text(hotelSites[p - 1]));
+        });
+        $('#Q826_D6').append(myselect.html());
+    });
+
+    $("#Q826_D7").on("click", function () {
+        console.log('populating data');
+        console.log(travelSitesArr);
+        $(this).find("option:not(:first)").remove();
+        var myselect = $('<select>');
+        $.each(hotelSitesArr, function (i, p) {
+            console.log(p);
+            myselect.append($('<option></option>').val(i + 1).text(hotelSites[p - 1]));
+        });
+        $('#Q826_D7').append(myselect.html());
+    });
+
+    $("#Q826_D8").on("click", function () {
+        console.log('populating data');
+        console.log(travelSitesArr);
+        $(this).find("option:not(:first)").remove();
+        var myselect = $('<select>');
+        $.each(hotelSitesArr, function (i, p) {
+            console.log(p);
+            myselect.append($('<option></option>').val(i + 1).text(hotelSites[p - 1]));
+        });
+        $('#Q826_D8').append(myselect.html());
+    });
+
+    $("#Q826_D9").on("click", function () {
+        console.log('populating data');
+        console.log(travelSitesArr);
+        $(this).find("option:not(:first)").remove();
+        var myselect = $('<select>');
+        $.each(hotelSitesArr, function (i, p) {
+            console.log(p);
+            myselect.append($('<option></option>').val(i + 1).text(hotelSites[p - 1]));
+        });
+        $('#Q826_D9').append(myselect.html());
+    });
+
+    $("#Q826_D10").on("click", function () {
+        console.log('populating data');
+        console.log(travelSitesArr);
+        $(this).find("option:not(:first)").remove();
+        var myselect = $('<select>');
+        $.each(hotelSitesArr, function (i, p) {
+            console.log(p);
+            myselect.append($('<option></option>').val(i + 1).text(hotelSites[p - 1]));
+        });
+        $('#Q826_D10').append(myselect.html());
+    });
+
+    $("#Q826_D11").on("click", function () {
+        console.log('populating data');
+        console.log(travelSitesArr);
+        $(this).find("option:not(:first)").remove();
+        var myselect = $('<select>');
+        $.each(hotelSitesArr, function (i, p) {
+            console.log(p);
+            myselect.append($('<option></option>').val(i + 1).text(hotelSites[p - 1]));
+        });
+        $('#Q826_D11').append(myselect.html());
+    });
+
+    $("#Q826_D12").on("click", function () {
+        console.log('populating data');
+        console.log(travelSitesArr);
+        $(this).find("option:not(:first)").remove();
+        var myselect = $('<select>');
+        $.each(hotelSitesArr, function (i, p) {
+            console.log(p);
+            myselect.append($('<option></option>').val(i + 1).text(hotelSites[p - 1]));
+        });
+        $('#Q826_D12').append(myselect.html());
+    });
+
+    $("#Q826_D13").on("click", function () {
+        console.log('populating data');
+        console.log(travelSitesArr);
+        $(this).find("option:not(:first)").remove();
+        var myselect = $('<select>');
+        $.each(hotelSitesArr, function (i, p) {
+            console.log(p);
+            myselect.append($('<option></option>').val(i + 1).text(hotelSites[p - 1]));
+        });
+        $('#Q826_D13').append(myselect.html());
+    });
+
+    $("#Q826_D14").on("click", function () {
+        console.log('populating data');
+        console.log(travelSitesArr);
+        $(this).find("option:not(:first)").remove();
+        var myselect = $('<select>');
+        $.each(hotelSitesArr, function (i, p) {
+            console.log(p);
+            myselect.append($('<option></option>').val(i + 1).text(hotelSites[p - 1]));
+        });
+        $('#Q826_D14').append(myselect.html());
+    });
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    travelSites = [
+        'MakeMyTrip',
+        'Thomas Cook',
+        'Tripadvisor',
+        'Ixigo',
+        'Expedia',
+        'Paytm',
+        'ClearTrip',
+        'Yatra',
+        'Travelchacha',
+        'Ezeego1',
+        'Goibibo',
+        'EaseMyTrip',
+        'Travelguru.com'
+    ]
+
+    var travelSitesArr = [];
+
+    $(document).on('click', '.Q834', function () {
+        var Q834 = $('input:checkbox:checked.Q834').map(function () {
+            return this.value;
+        }).get();
+        if (this.checked == true) {
+            if (travelSitesArr.indexOf(this.value) == -1) {
+                travelSitesArr.push(this.value);
+            }
+        }
+        else if (this.checked == false) {
+            var index = travelSitesArr.indexOf(this.value);
+            if (index > -1) {
+                travelSitesArr.splice(index, 1);
+            }
+        }
+    });
+
+    //$('.Q834:checkbox:checked').each(function () {
+    //    travelSitesArr.push($(this).attr('name'));
+    //});
+
+    $("#Q835_D1").on("click", function () {
+        console.log('populating data');
+        console.log(travelSitesArr);
+        $(this).find("option:not(:first)").remove();
+        var myselect = $('<select>');
+        $.each(travelSitesArr, function (i, p) {
+            console.log(p);
+            myselect.append($('<option></option>').val(i+1).text(travelSites[p-1]));
+        });
+        $('#Q835_D1').append(myselect.html());
+    });
+
+    $("#Q835_D2").on("click", function () {
+        console.log('populating data');
+        console.log(travelSitesArr);
+        $(this).find("option:not(:first)").remove();
+        var myselect = $('<select>');
+        $.each(travelSitesArr, function (i, p) {
+            console.log(p);
+            myselect.append($('<option></option>').val(i+1).text(travelSites[p-1]));
+        });
+        $('#Q835_D2').append(myselect.html());
+    });
+
+    $("#Q835_D3").on("click", function () {
+        console.log('populating data');
+        console.log(travelSitesArr);
+        $(this).find("option:not(:first)").remove();
+        var myselect = $('<select>');
+        $.each(travelSitesArr, function (i, p) {
+            console.log(p);
+            myselect.append($('<option></option>').val(i+1).text(travelSites[p-1]));
+        });
+        $('#Q835_D3').append(myselect.html());
+    });
+
+    $("#Q835_D4").on("click", function () {
+        console.log('populating data');
+        console.log(travelSitesArr);
+        $(this).find("option:not(:first)").remove();
+        var myselect = $('<select>');
+        $.each(travelSitesArr, function (i, p) {
+            console.log(p);
+            myselect.append($('<option></option>').val(i+1).text(travelSites[p-1]));
+        });
+        $('#Q835_D4').append(myselect.html());
+    });
+
+    $("#Q835_D5").on("click", function () {
+        console.log('populating data');
+        console.log(travelSitesArr);
+        $(this).find("option:not(:first)").remove();
+        var myselect = $('<select>');
+        $.each(travelSitesArr, function (i, p) {
+            console.log(p);
+            myselect.append($('<option></option>').val(i+1).text(travelSites[p-1]));
+        });
+        $('#Q835_D5').append(myselect.html());
+    });
+
+    $("#Q835_D6").on("click", function () {
+        console.log('populating data');
+        console.log(travelSitesArr);
+        $(this).find("option:not(:first)").remove();
+        var myselect = $('<select>');
+        $.each(travelSitesArr, function (i, p) {
+            console.log(p);
+            myselect.append($('<option></option>').val(i+1).text(travelSites[p-1]));
+        });
+        $('#Q835_D6').append(myselect.html());
+    });
+
+    $("#Q835_D7").on("click", function () {
+        console.log('populating data');
+        console.log(travelSitesArr);
+        $(this).find("option:not(:first)").remove();
+        var myselect = $('<select>');
+        $.each(travelSitesArr, function (i, p) {
+            console.log(p);
+            myselect.append($('<option></option>').val(i+1).text(travelSites[p-1]));
+        });
+        $('#Q835_D7').append(myselect.html());
+    });
+
+    $("#Q835_D8").on("click", function () {
+        console.log('populating data');
+        console.log(travelSitesArr);
+        $(this).find("option:not(:first)").remove();
+        var myselect = $('<select>');
+        $.each(travelSitesArr, function (i, p) {
+            console.log(p);
+            myselect.append($('<option></option>').val(i+1).text(travelSites[p-1]));
+        });
+        $('#Q835_D8').append(myselect.html());
+    });
+
+    $("#Q835_D9").on("click", function () {
+        console.log('populating data');
+        console.log(travelSitesArr);
+        $(this).find("option:not(:first)").remove();
+        var myselect = $('<select>');
+        $.each(travelSitesArr, function (i, p) {
+            console.log(p);
+            myselect.append($('<option></option>').val(i+1).text(travelSites[p-1]));
+        });
+        $('#Q835_D9').append(myselect.html());
+    });
+
+    $("#Q835_D10").on("click", function () {
+        console.log('populating data');
+        console.log(travelSitesArr);
+        $(this).find("option:not(:first)").remove();
+        var myselect = $('<select>');
+        $.each(travelSitesArr, function (i, p) {
+            console.log(p);
+            myselect.append($('<option></option>').val(i+1).text(travelSites[p-1]));
+        });
+        $('#Q835_D10').append(myselect.html());
+    });
+
+    $("#Q835_D11").on("click", function () {
+        console.log('populating data');
+        console.log(travelSitesArr);
+        $(this).find("option:not(:first)").remove();
+        var myselect = $('<select>');
+        $.each(travelSitesArr, function (i, p) {
+            console.log(p);
+            myselect.append($('<option></option>').val(i+1).text(travelSites[p-1]));
+        });
+        $('#Q835_D11').append(myselect.html());
+    });
+
+    $("#Q835_D12").on("click", function () {
+        console.log('populating data');
+        console.log(travelSitesArr);
+        $(this).find("option:not(:first)").remove();
+        var myselect = $('<select>');
+        $.each(travelSitesArr, function (i, p) {
+            console.log(p);
+            myselect.append($('<option></option>').val(i+1).text(travelSites[p-1]));
+        });
+        $('#Q835_D12').append(myselect.html());
+    });
+
+    $("#Q835_D13").on("click", function () {
+        console.log('populating data');
+        console.log(travelSitesArr);
+        $(this).find("option:not(:first)").remove();
+        var myselect = $('<select>');
+        $.each(travelSitesArr, function (i, p) {
+            console.log(p);
+            myselect.append($('<option></option>').val(i+1).text(travelSites[p-1]));
+        });
+        $('#Q835_D13').append(myselect.html());
+    });
+
+    $("#Q835_D14").on("click", function () {
+        console.log('populating data');
+        console.log(travelSitesArr);
+        $(this).find("option:not(:first)").remove();
+        var myselect = $('<select>');
+        $.each(travelSitesArr, function (i, p) {
+            console.log(p);
+            myselect.append($('<option></option>').val(i+1).text(travelSites[p-1]));
+        });
+        $('#Q835_D14').append(myselect.html());
+    });
 
     ///////////////////////////////////////////////////////////////////
 
