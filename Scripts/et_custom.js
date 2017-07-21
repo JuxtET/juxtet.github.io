@@ -1,5 +1,7 @@
 ﻿$(function () {
 
+    arr_Q834 = [];
+
     $('#Q817').hide();
     $('.H817').hide();
     $('#sectionHotel').hide();
@@ -166,7 +168,7 @@
             $('#Q813_C5').prop("checked") == true ||
             $('#Q813_C6').prop("checked") == true ||
             $('#Q813_C98').prop("checked") == true) {
-                $('#sectionHotel').show();
+            $('#sectionHotel').show();
         }
     });
 
@@ -219,6 +221,72 @@
     $(document).on('click', '#Q822_D1', function () {
         generateTextBoxForDropDown('Q822_D1', '98');
     });
+
+
+    //////////////////////////////////////////////////////
+
+    travelSites = [
+        'MakeMyTrip',
+        'Thomas Cook',
+        'Tripadvisor',
+        'Ixigo',
+        'Expedia',
+        'Paytm',
+        'ClearTrip',
+        'Yatra',
+        'Travelchacha',
+        'Ezeego1',
+        'Goibibo',
+        'EaseMyTrip',
+        'Travelguru.com'
+    ]
+
+    //For ayush
+    //$(document).on('click', '.Q834', function () {
+    //    //var Q834 = $('input:checkbox:checked.Q834').map(function () {
+    //    //    alert('hello');
+    //    //    return this.value;
+    //    //}).get();
+    //    if (this.checked == true) {
+    //        if (arr_Q834.indexOf(this.value) == -1) {
+    //            arr_Q834.push(this.value);
+    //        }
+    //        var options = '';
+    //        if (arr_Q834.length != 0) {
+    //            for (var i = 0; i < arr_Q834.length; i++) {
+    //                options += '<option value="' + travelSites[arr_Q834[i] - 1] + '">' + travelSites[arr_Q834[i] - 1] + '</option>';
+    //            }
+    //            $(options).addBack($('.travel_parent')).last();
+    //        }
+    //    }
+    //    else if(this.checked == false) {
+    //        var index = arr_Q834.indexOf(this.value);
+    //        if (index > -1) {
+    //            arr_Q834.splice(index, 1);
+    //        }
+    //        var options = '';
+    //        if (arr_Q834.length != 0) {
+    //            for (var i = 0; i < arr_Q834.length; i++) {
+    //                options += '<option value="' + travelSites[arr_Q834[i] - 1] + '">' + travelSites[arr_Q834[i] - 1] + '</option>';
+    //            }
+    //            $(options).add($('.travel_parent')).last();
+    //        }
+    //    }
+    //var options = '';
+    //if (arr_Q834.length != 0) {
+    //    for (var i = 0; i < arr_Q834.length; i++) {
+    //        options += '<option value="' + travelSites[arr_Q834[i]-1] + '">' + travelSites[arr_Q834[i]-1] + '</option>';
+    //    }
+    //    $(options).insertAfter($('.travel_parent')).last();
+    //}
+        
+    //});
+
+
+
+
+
+    ///////////////////////////////////////////////////////////////////
 
     // =======================================================
     // ==================== Functions ========================
