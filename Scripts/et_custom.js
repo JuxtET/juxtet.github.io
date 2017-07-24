@@ -4,7 +4,11 @@
 
     $('#Q817').hide();
     $('.H817').hide();
+    $('.H827').hide();
+    $('.H836').hide();
     $('#sectionHotel').hide();
+    $('#sectionTicket').hide();
+    $('#internationalTravel').hide();
 
     if (!($('.form-border').hasClass('bottom-border'))) {
         $('.form-border').addClass('bottom-border');
@@ -38,6 +42,8 @@
                 $('.form-border').addClass('bottom-border');
             }
             $('.hideit').show();
+            $('#sectionHotel').show();
+            $('#sectionTicket').show();
             $("#Q802").show();
             $('#Q804').show();
             $('#Q805').show();
@@ -129,9 +135,21 @@
             $('.H822').hide();
             $('.H823').hide();
             $('.H824').hide();
+            $('#sectionHotel').hide();
+            $('#sectionTicket').hide();
         }
 
     })
+
+    $(document).on('change', '#Q801_D2', function () {
+        var selectedValue = $('#Q801_D2').val();
+        if (selectedValue != 0 && selectedValue != 1) {
+            $('#internationalTravel').show();
+        }
+        else {
+            $('#internationalTravel').hide();
+        }
+    });
 
     $(document).on('change', '#Q808_D1', function () {
         $selectedValue = $('#Q808_D1').val();
@@ -141,6 +159,32 @@
         }
         else {
             $('#Q809').hide();
+        }
+    });
+
+    $(document).on('click', '.Q813', function () {
+        if ($('#Q813_C7').prop("checked") == true) {
+            $('#sectionHotel').hide();
+        }
+        else if ($('#Q813_C1').prop("checked") == true ||
+            $('#Q813_C2').prop("checked") == true ||
+            $('#Q813_C3').prop("checked") == true ||
+            $('#Q813_C4').prop("checked") == true ||
+            $('#Q813_C5').prop("checked") == true ||
+            $('#Q813_C6').prop("checked") == true ||
+            $('#Q813_C98').prop("checked") == true) {
+            $('#sectionHotel').show();
+        }
+    });
+
+    $(document).on('click', '#Q814_D1', function () {
+        var selectedValue = $('#Q814_D1').val();
+
+        if (selectedValue == 4) {
+            $('#sectionTicket').hide();
+        }
+        else {
+            $('#sectionTicket').show();
         }
     });
 
@@ -157,18 +201,26 @@
         }
     });
 
-    $(document).on('click', '.Q813', function () {
-        if ($('#Q813_C7').prop("checked") == true) {
-            $('#sectionHotel').hide();
+    $(document).on('change', '#Q818_D1', function () {
+        $selectedValue = $('#Q818_D1').val();
+
+        if ($selectedValue == 1) {
+            $('#Q819').hide();
         }
-        else if ($('#Q813_C1').prop("checked") == true ||
-            $('#Q813_C2').prop("checked") == true ||
-            $('#Q813_C3').prop("checked") == true ||
-            $('#Q813_C4').prop("checked") == true ||
-            $('#Q813_C5').prop("checked") == true ||
-            $('#Q813_C6').prop("checked") == true ||
-            $('#Q813_C98').prop("checked") == true) {
-            $('#sectionHotel').show();
+        else {
+            $('#Q819').show();
+        }
+    });
+
+
+    $(document).on('change', '#Q828_D1', function () {
+        $selectedValue = $('#Q828_D1').val();
+
+        if ($selectedValue == 1) {
+            $('#Q829').hide();
+        }
+        else {
+            $('#Q829').show();
         }
     });
 
@@ -222,24 +274,106 @@
         generateTextBoxForDropDown('Q822_D1', '98');
     });
 
+    ///////////////////////////////////////////////////////////////////
+
+    /////////////////////////////// Dialog Box /////////////////////////////////////////////////
+
+    var radio1Value = "";
+    var dialog1 = $('#dialog-form-1').dialog({
+        resizable: false,
+        autoOpen: false,
+        height: "auto",
+        width: 400,
+        modal: true,
+        buttons: {
+            "Submit": function () {
+                radio1Value = $('input[name="radio1"]:checked').val();
+                if (radio1Value == "" || radio1Value == null || radio1Value == undefined) {
+                    alert("Please select the right option");
+                    return false;
+                }
+                else {
+                    dialog1.dialog("close");
+                }
+            }
+        },
+        beforeClose: function () {
+            radio1Value = $('input[name="radio1"]:checked').val();
+            if (radio1Value == "" || radio1Value == null || radio1Value == undefined) {
+                alert("Please select the right option");
+                return false;
+            }
+            else {
+                return true;
+            }
+        },
+        close: function () {
+            dialog1.dialog("close");
+        }
+    });
+
+    var radio2Value = "";
+    var dialog2 = $('#dialog-form-2').dialog({
+        resizable: false,
+        autoOpen: false,
+        height: "auto",
+        width: 400,
+        modal: true,
+        buttons: {
+            "Submit": function () {
+                radio2Value = $('input[name="radio2"]:checked').val();
+                if (radio2Value == "" || radio2Value == null || radio2Value == undefined) {
+                    alert("Please select the right option");
+                    return false;
+                }
+                else {
+                    dialog2.dialog("close");
+                }
+            }
+        },
+        beforeClose: function () {
+            radio2Value = $('input[name="radio2"]:checked').val();
+            if (radio2Value == "" || radio2Value == null || radio2Value == undefined) {
+                alert("Please select the right option");
+                return false;
+            }
+            else {
+                return true;
+            }
+        },
+        close: function () {
+            dialog2.dialog("close");
+        }
+    });
+
+    $(document).on('change', '#Q804_D1', function () {
+        var val = $('#Q804_D1').val();
+        if (val == 3) {
+            dialog1.dialog("open");
+        }
+        else if (val == 4) {
+            dialog2.dialog("open");
+        }
+    });
+
 
     //////////////////////////////////////////////////////
 
-    travelSites = [
-        'MakeMyTrip',
-        'Thomas Cook',
-        'Tripadvisor',
-        'Ixigo',
-        'Expedia',
-        'Paytm',
-        'ClearTrip',
-        'Yatra',
-        'Travelchacha',
-        'Ezeego1',
-        'Goibibo',
-        'EaseMyTrip',
-        'Travelguru.com'
-    ]
+    //travelSites = [
+    //    'MakeMyTrip',
+    //    'Thomas Cook',
+    //    'Tripadvisor',
+    //    'Ixigo',
+    //    'Expedia',
+    //    'Paytm',
+    //    'ClearTrip',
+    //    'Yatra',
+    //    'Travelchacha',
+    //    'Ezeego1',
+    //    'Goibibo',
+    //    'EaseMyTrip',
+    //    'Travelguru.com'
+    //]
 
     //For ayush
     //$(document).on('click', '.Q834', function () {
@@ -296,13 +430,15 @@
         'Airbnb',
         'Goibibo',
         'OYO rooms',
-        'Trivago'
+        'Trivago',
+        'None',
+        'None'
     ]
 
     var hotelSitesArr = [];
 
-    $(document).on('click', '.Q826', function () {
-        var Q826 = $('input:checkbox:checked.Q826').map(function () {
+    $(document).on('click', '.Q825', function () {
+        var Q825 = $('input:checkbox:checked.Q825').map(function () {
             return this.value;
         }).get();
         if (this.checked == true) {
@@ -316,17 +452,45 @@
                 hotelSitesArr.splice(index, 1);
             }
         }
+        SetDynamicHotelQues();
     });
+
+    function SetDynamicHotelQues(){
+        var section = $('#Q827').find('section');
+        section.children().remove();
+        if (hotelSitesArr.length == 0) {
+            $('.H827').hide();
+        }
+        else {
+            $('.H827').show();
+        }
+
+        $.each(hotelSitesArr, function (i, p) {
+            if (hotelSites[p - 1] != "None") {
+                section.append($("<p class='col-md-4' style='font-weight:normal;'></p>").text(hotelSites[p - 1]));
+            }
+        });
+        section.children().each(function () {
+            $("<select class='style_dd form-control' style='margin-top:5px;' name='Q827_1' id='Q827_D1' required=''>"
+                        + "<option value='1'>Very likely to recommend</option>"
+                        + "<option value='2'>May recommend</option>"
+                        + "<option value='3'>May /may not recommend</option>"
+                        + "<option value='4'>May not recommend</option>"
+                        + "<option value='5'>Not at all likely to recommend</option>"
+                        + "</select>").insertAfter($(this));
+        });
+    }
 
     $("#Q826_D1").on("click", function () {
         $(this).find("option:not(:first)").remove();
         var myselect = $('<select>');
         $.each(hotelSitesArr, function (i, p) {
-            console.log(p);
             myselect.append($('<option></option>').val(i + 1).text(hotelSites[p - 1]));
         });
         $('#Q826_D1').append(myselect.html());
+
     });
+        
 
     $("#Q826_D2").on("click", function () {
         $(this).find("option:not(:first)").remove();
@@ -471,16 +635,14 @@
     });
 
     $("#Q826_D14").on("click", function () {
-        console.log('populating data');
-        console.log(travelSitesArr);
         $(this).find("option:not(:first)").remove();
         var myselect = $('<select>');
         $.each(hotelSitesArr, function (i, p) {
-            console.log(p);
             myselect.append($('<option></option>').val(i + 1).text(hotelSites[p - 1]));
         });
         $('#Q826_D14').append(myselect.html());
     });
+
     //////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     travelSites = [
@@ -501,6 +663,32 @@
 
     var travelSitesArr = [];
 
+    function SetDynamicTravelQues() {
+        var section = $('#Q836').find('section');
+        section.children().remove();
+        if (travelSitesArr.length == 0) {
+            $('.H836').hide();
+        }
+        else {
+            $('.H836').show();
+        }
+
+        $.each(travelSitesArr, function (i, p) {
+            if (travelSites[p - 1] != "None") {
+                section.append($("<p class='col-md-4' style='font-weight:normal;'></p>").text(travelSites[p - 1]));
+            }
+        });
+        section.children().each(function () {
+            $("<select class='style_dd form-control' style='margin-top:5px;' name='Q836_1' id='Q836_D1' required=''>"
+                        + "<option value='1'>Very likely to recommend</option>"
+                        + "<option value='2'>May recommend</option>"
+                        + "<option value='3'>May /may not recommend</option>"
+                        + "<option value='4'>May not recommend</option>"
+                        + "<option value='5'>Not at all likely to recommend</option>"
+                        + "</select>").insertAfter($(this));
+        });
+    }
+
     $(document).on('click', '.Q834', function () {
         var Q834 = $('input:checkbox:checked.Q834').map(function () {
             return this.value;
@@ -516,6 +704,8 @@
                 travelSitesArr.splice(index, 1);
             }
         }
+
+        SetDynamicTravelQues();
     });
 
     //$('.Q834:checkbox:checked').each(function () {
@@ -523,36 +713,27 @@
     //});
 
     $("#Q835_D1").on("click", function () {
-        console.log('populating data');
-        console.log(travelSitesArr);
         $(this).find("option:not(:first)").remove();
         var myselect = $('<select>');
         $.each(travelSitesArr, function (i, p) {
-            console.log(p);
             myselect.append($('<option></option>').val(i+1).text(travelSites[p-1]));
         });
         $('#Q835_D1').append(myselect.html());
     });
 
     $("#Q835_D2").on("click", function () {
-        console.log('populating data');
-        console.log(travelSitesArr);
         $(this).find("option:not(:first)").remove();
         var myselect = $('<select>');
         $.each(travelSitesArr, function (i, p) {
-            console.log(p);
             myselect.append($('<option></option>').val(i+1).text(travelSites[p-1]));
         });
         $('#Q835_D2').append(myselect.html());
     });
 
     $("#Q835_D3").on("click", function () {
-        console.log('populating data');
-        console.log(travelSitesArr);
         $(this).find("option:not(:first)").remove();
         var myselect = $('<select>');
         $.each(travelSitesArr, function (i, p) {
-            console.log(p);
             myselect.append($('<option></option>').val(i+1).text(travelSites[p-1]));
         });
         $('#Q835_D3').append(myselect.html());
