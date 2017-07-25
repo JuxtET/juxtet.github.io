@@ -1,6 +1,13 @@
 ﻿$(function () {
 
     arr_Q834 = [];
+    isDomesticOpen = false;
+    isDomesticHotelOpen = false;
+    isDomesticTicketOpen = false;
+    isInternationalOpen = false;
+    isIntenationalHotelOpen = false;
+    isInternationalTicketOpen = false;
+    isFutureOpen = false;
 
     $('#Q817').hide();
     $('.H817').hide();
@@ -38,6 +45,7 @@
 
         if ($selectedValue != 0 && $selectedValue != 1) {
 
+            isDomesticOpen = true;
             if(!($('.form-border').hasClass('bottom-border'))){
                 $('.form-border').addClass('bottom-border');
             }
@@ -80,15 +88,16 @@
             $('.H816').show();
             $('.H806').show();
             //$('.H817').show(); to be changed later
-            $('.H818').hide();
-            $('.H819').hide();
-            $('.H820').hide();
-            $('.H821').hide();
-            $('.H822').hide();
-            $('.H823').hide();
-            $('.H824').hide();
+            $('.H818').show();
+            $('.H819').show();
+            $('.H820').show();
+            $('.H821').show();
+            $('.H822').show();
+            $('.H823').show();
+            $('.H824').show();
         }
         else {
+            isDomesticOpen = false;
             $('.form-border').removeClass('bottom-border');
             $('.hideit').hide();
             $("#Q802").hide();
@@ -105,7 +114,7 @@
             $('#Q814').hide();
             $('#Q815').hide();
             $('#Q816').hide();
-            //$('#Q817').hide(); to be changed later
+            $('#Q817').hide();
             $('#Q818').hide();
             $('#Q819').hide();
             $('#Q820').hide();
@@ -127,7 +136,7 @@
             $('.H814').hide();
             $('.H815').hide();
             $('.H816').hide();
-            //$('.H817').hide(); to be changed later
+            $('.H817').hide();
             $('.H818').hide();
             $('.H819').hide();
             $('.H820').hide();
@@ -144,9 +153,11 @@
     $(document).on('change', '#Q801_D2', function () {
         var selectedValue = $('#Q801_D2').val();
         if (selectedValue != 0 && selectedValue != 1) {
+            isInternationalOpen = true;
             $('#internationalTravel').show();
         }
         else {
+            isInternationalOpen = false;
             $('#internationalTravel').hide();
         }
     });
@@ -190,8 +201,8 @@
 
     $(document).on('change', '#Q816_D1', function () {
         $selectedValue = $('#Q816_D1').val();
-
-        if ($selectedValue == 4 || $selectedValue == 5) {
+        
+        if (($selectedValue == 4 || $selectedValue == 5) && (isDomesticOpen)) {
             $('#Q817').show();
             $('.H817').show();
         }
@@ -240,13 +251,13 @@
         generateTextBox('Q817_C98');
     });
 
-    $(document).on('click', '#Q825_1_C98', function () {
-        generateTextBox('Q825_1_C98');
-    });
+    //$(document).on('click', '#Q825_1_C98', function () {
+    //    generateTextBox('Q825_1_C98');
+    //});
 
-    $(document).on('click', '#Q825_2_C98', function () {
-        generateTextBox('Q825_2_C98');
-    });
+    //$(document).on('click', '#Q825_2_C98', function () {
+    //    generateTextBox('Q825_2_C98');
+    //});
 
     ///////////////Dropdown//////////////
 
@@ -272,6 +283,14 @@
 
     $(document).on('click', '#Q822_D1', function () {
         generateTextBoxForDropDown('Q822_D1', '98');
+    });
+
+    $(document).on('click', '#Q829_D1', function () {
+        generateTextBoxForDropDown('Q829_D1', '98');
+    });
+
+    $(document).on('click', '#Q831_D2', function () {
+        generateTextBoxForDropDown('Q831_D2', '98');
     });
 
     ///////////////////////////////////////////////////////////////////
@@ -431,28 +450,49 @@
         'Goibibo',
         'OYO rooms',
         'Trivago',
-        'None',
+        'Other',
         'None'
     ]
 
     var hotelSitesArr = [];
+    var DublicateHotelArr = [];
 
-    $(document).on('click', '.Q825', function () {
-        var Q825 = $('input:checkbox:checked.Q825').map(function () {
-            return this.value;
-        }).get();
+    $(document).on('click', '.hotelSitesData', function () {
+        //var Q825 = $('input:checkbox:checked.Q825').map(function () {
+        //    return this.value;
+        //}).get();
         if (this.checked == true) {
-            if (hotelSitesArr.indexOf(this.value) == -1) {
-                hotelSitesArr.push(this.value);
-            }
+            //if (hotelSitesArr.indexOf(this.value) == -1) {
+            DublicateHotelArr.push(this.value);
+            //}
         }
         else if (this.checked == false) {
-            var index = hotelSitesArr.indexOf(this.value);
+            var index = DublicateHotelArr.indexOf(this.value);
             if (index > -1) {
-                hotelSitesArr.splice(index, 1);
+                DublicateHotelArr.splice(index, 1);
             }
         }
-        SetDynamicHotelQues();
+        
+        hotelSitesArr = [];
+        $.each(DublicateHotelArr, function (i, ele) {
+            if ($.inArray(ele, hotelSitesArr) === -1) hotelSitesArr.push(ele);
+        });
+        
+        SetDynamicHotelQues(); //For #Q827
+        $("#Q826_D1").trigger("click");
+        $("#Q826_D2").trigger("click");
+        $("#Q826_D3").trigger("click");
+        $("#Q826_D4").trigger("click");
+        $("#Q826_D5").trigger("click");
+        $("#Q826_D6").trigger("click");
+        $("#Q826_D7").trigger("click");
+        $("#Q826_D8").trigger("click");
+        $("#Q826_D9").trigger("click");
+        $("#Q826_D10").trigger("click");
+        $("#Q826_D11").trigger("click");
+        $("#Q826_D12").trigger("click");
+        $("#Q826_D13").trigger("click");
+        $("#Q826_D14").trigger("click");
     });
 
     function SetDynamicHotelQues(){
@@ -466,6 +506,7 @@
         }
 
         $.each(hotelSitesArr, function (i, p) {
+            console.log(p, hotelSites[p - 1]);
             if (hotelSites[p - 1] != "None") {
                 section.append($("<p class='col-md-4' style='font-weight:normal;'></p>").text(hotelSites[p - 1]));
             }
@@ -658,10 +699,51 @@
         'Ezeego1',
         'Goibibo',
         'EaseMyTrip',
-        'Travelguru.com'
+        'Travelguru.com',
+        'Other',
+        'None'
     ]
 
     var travelSitesArr = [];
+    var dublicateTravelSitesArr = [];
+
+    $(document).on('click', '.ticketSitesData', function () {
+        //var Q834 = $('input:checkbox:checked.Q834').map(function () {
+        //    return this.value;
+        //}).get();
+        if (this.checked == true) {
+            //if (travelSitesArr.indexOf(this.value) == -1) {
+                dublicateTravelSitesArr.push(this.value);
+            //}
+        }
+        else if (this.checked == false) {
+            var index = dublicateTravelSitesArr.indexOf(this.value);
+            if (index > -1) {
+                dublicateTravelSitesArr.splice(index, 1);
+            }
+        }
+
+        travelSitesArr = [];
+        $.each(dublicateTravelSitesArr, function (i, ele) {
+            if ($.inArray(ele, travelSitesArr) === -1) travelSitesArr.push(ele);
+        });
+
+        SetDynamicTravelQues();
+        $("#Q835_D1").trigger("click");
+        $("#Q835_D2").trigger("click");
+        $("#Q835_D3").trigger("click");
+        $("#Q835_D4").trigger("click");
+        $("#Q835_D5").trigger("click");
+        $("#Q835_D6").trigger("click");
+        $("#Q835_D7").trigger("click");
+        $("#Q835_D8").trigger("click");
+        $("#Q835_D9").trigger("click");
+        $("#Q835_D10").trigger("click");
+        $("#Q835_D11").trigger("click");
+        $("#Q835_D12").trigger("click");
+        $("#Q835_D13").trigger("click");
+        $("#Q835_D14").trigger("click");
+    });
 
     function SetDynamicTravelQues() {
         var section = $('#Q836').find('section');
@@ -688,25 +770,6 @@
                         + "</select>").insertAfter($(this));
         });
     }
-
-    $(document).on('click', '.Q834', function () {
-        var Q834 = $('input:checkbox:checked.Q834').map(function () {
-            return this.value;
-        }).get();
-        if (this.checked == true) {
-            if (travelSitesArr.indexOf(this.value) == -1) {
-                travelSitesArr.push(this.value);
-            }
-        }
-        else if (this.checked == false) {
-            var index = travelSitesArr.indexOf(this.value);
-            if (index > -1) {
-                travelSitesArr.splice(index, 1);
-            }
-        }
-
-        SetDynamicTravelQues();
-    });
 
     //$('.Q834:checkbox:checked').each(function () {
     //    travelSitesArr.push($(this).attr('name'));
