@@ -16,6 +16,7 @@
     $('#sectionHotel').hide();
     $('#sectionTicket').hide();
     $('#internationalTravel').hide();
+    $('#internationalHotelSection').hide();
 
     if (!($('.form-border').hasClass('bottom-border'))) {
         $('.form-border').addClass('bottom-border');
@@ -32,6 +33,8 @@
     $("#Q801_D1").trigger("change");
     $("#Q808_D1").trigger("change");
     $("#Q816_D1").trigger("change");
+    $('#Q843_D1').trigger("change");
+    $('#Q855_D1').trigger("change");
     //$('.Q813').trigger("click");
 
 
@@ -223,6 +226,17 @@
         }
     });
 
+    //$(document).on('change', '#Q821_D1', function () {
+    //    $selectedValue = $('#Q821_D1').val();
+
+    //    if ($selectedValue != 1 && $selectedValue != 2 && $selectedValue != 3 && $selectedValue != 4) {
+    //        $('#Q822').show(); // NO Header Hide+
+    //    }
+    //    else {
+    //        $('#Q822').hide();
+    //    }
+    //});
+
 
     $(document).on('change', '#Q828_D1', function () {
         $selectedValue = $('#Q828_D1').val();
@@ -234,6 +248,76 @@
             $('#Q829').show();
         }
     });
+
+    $(document).on('change', '#Q843_D1', function () {
+        $selectedValue = $('#Q843_D1').val();
+
+        if ($selectedValue != 0 && $selectedValue != 1) {
+            $('#Q844').show(); // NO Header Hide+
+        }
+        else {
+            $('#Q844').hide();
+        }
+    });
+
+    $(document).on('click', '.Q848', function () {
+        if ($('#Q848_C7').prop("checked") == true) {
+            $('#internationalHotelSection').hide();
+        }
+        else {
+            $('#internationalHotelSection').show();
+        }
+    });
+
+    $(document).on('change', '#Q851_D1', function () {
+        $selectedValue = $('#Q851_D1').val();
+
+        if (($selectedValue == 4 || $selectedValue == 5) && (isInternationalOpen)) {
+            $('#Q890').show();
+            $('.H890').show();
+        }
+        else {
+            $('#Q890').hide();
+            $('.H890').hide();
+        }
+    });
+
+    $(document).on('change', '#Q855_D1', function () {
+        $selectedValue = $('#Q855_D1').val();
+
+        if ($selectedValue != 1 && $selectedValue != 2 && $selectedValue != 3 && $selectedValue != 4) {
+            $('#Q855_1').show(); // NO Header Hide+
+            //Hide other questions
+            $('#Q856').hide();
+            $('#H857').hide();
+            $('#Q857').hide();
+            $('#H858').hide();
+            $('#Q858').hide();
+            $('#H859').hide();
+            $('#Q859').hide();
+            $('#H858').hide();
+            $('#Q858').hide();
+            $('#H860').hide();
+            $('#Q860').hide();
+        }
+        else {
+            $('#Q855_1').hide();
+            //Show other questions
+            $('#Q856').show();
+            $('#H857').show();
+            $('#Q857').show();
+            $('#H858').show();
+            $('#Q858').show();
+            $('#H859').show();
+            $('#Q859').show();
+            $('#H858').show();
+            $('#Q858').show();
+            $('#H860').show();
+            $('#Q860').show();
+        }
+    });
+
+    
 
     // =======================================================
     // ================== Generate Textbox ===================
@@ -367,6 +451,16 @@
 
     $(document).on('change', '#Q804_D1', function () {
         var val = $('#Q804_D1').val();
+        if (val == 3) {
+            dialog1.dialog("open");
+        }
+        else if (val == 4) {
+            dialog2.dialog("open");
+        }
+    });
+
+    $(document).on('change', '#Q839_D1', function () {
+        var val = $('#Q839_D1').val();
         if (val == 3) {
             dialog1.dialog("open");
         }
