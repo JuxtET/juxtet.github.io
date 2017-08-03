@@ -355,12 +355,12 @@
             $('#Q823').hide();
             $('.H824').hide();
             $('#Q824').hide();
-            $('.H825').hide();
-            $('#Q825').hide();
-            $('.H826').hide();
-            $('#Q826').hide();
-            $('.H827').hide();
-            $('#Q827').hide();
+            //$('.H825').hide();
+            //$('#Q825').hide();
+            //$('.H826').hide();
+            //$('#Q826').hide();
+            //$('.H827').hide();
+            //$('#Q827').hide();
         }
         else {
             $('#Q822').hide(); // NO Header Hide+
@@ -368,12 +368,12 @@
             $('#Q823').show();
             $('.H824').show();
             $('#Q824').show();
-            $('.H825').show();
-            $('#Q825').show();
-            $('.H826').show();
-            $('#Q826').show();
-            $('.H827').show();
-            $('#Q827').show();
+            //$('.H825').show();
+            //$('#Q825').show();
+            //$('.H826').show();
+            //$('#Q826').show();
+            //$('.H827').show();
+            //$('#Q827').show();
         }
     });
 
@@ -392,18 +392,18 @@
     $(document).on('change', '#Q831_D1', function () {
         $selectedValue = $('#Q831_D1').val();
 
-        if ($selectedValue == 5 || $selectedValue == 6 || $selectedValue == 7) {
+        if ($selectedValue == 4 || $selectedValue == 5 || $selectedValue == 6) {
             $('#Q831_2').show(); // NO Header Hide+
             //Hide other questions
             $('#Q832').hide();
             $('.H833').hide();
             $('#Q833').hide();
-            $('.H834').hide();
-            $('#Q834').hide();
-            $('.H835').hide();
-            $('#Q835').hide();
-            $('.H836').hide();
-            $('#Q836').hide();
+            //$('.H834').hide();
+            //$('#Q834').hide();
+            //$('.H835').hide();
+            //$('#Q835').hide();
+            //$('.H836').hide();
+            //$('#Q836').hide();
         }
         else {
             $('#Q831_2').hide(); // NO Header Hide+
@@ -411,12 +411,12 @@
             $('#Q832').show();
             $('.H833').show();
             $('#Q833').show();
-            $('.H834').show();
-            $('#Q834').show();
-            $('.H835').show();
-            $('#Q835').show();
-            $('.H836').show();
-            $('#Q836').show();
+            //$('.H834').show();
+            //$('#Q834').show();
+            //$('.H835').show();
+            //$('#Q835').show();
+            //$('.H836').show();
+            //$('#Q836').show();
         }
     });
 
@@ -466,12 +466,12 @@
             $('#Q856').hide();
             $('.H857').hide();
             $('#Q857').hide();
-            $('.H858').hide();
-            $('#Q858').hide();
-            $('.H859').hide();
-            $('#Q859').hide();
-            $('.H860').hide();
-            $('#Q860').hide();
+            //$('.H858').hide();
+            //$('#Q858').hide();
+            //$('.H859').hide();
+            //$('#Q859').hide();
+            //$('.H860').hide();
+            //$('#Q860').hide();
         }
         else {
             $('#Q855_1').hide();
@@ -480,11 +480,11 @@
             $('#Q856').show();
             $('.H857').show();
             $('#Q857').show();
-            $('.H858').show();
-            $('#Q858').show();
-            $('.H859').show();
-            $('#Q859').show();
-            $('#Q860').show();
+            //$('.H858').show();
+            //$('#Q858').show();
+            //$('.H859').show();
+            //$('#Q859').show();
+            //$('#Q860').show();
         }
     });
 
@@ -493,19 +493,19 @@
     $(document).on('change', '#Q865_D1', function () {
         $selectedValue = $('#Q865_D1').val();
 
-        if ($selectedValue == 5 || $selectedValue == 6 || $selectedValue == 7) {
+        if ($selectedValue == 4 || $selectedValue == 5 || $selectedValue == 6) {
             $('#Q865_2').show(); // NO Header Hide+
             //Hide other questions
             $('.H866').hide();
             $('#Q866').hide();
             $('.H867').hide();
             $('#Q867').hide();
-            $('.H868').hide();
-            $('#Q868').hide();
-            $('.H869').hide();
-            $('#Q869').hide();
-            $('.H870').hide();
-            $('#Q870').hide();
+            //$('.H868').hide();
+            //$('#Q868').hide();
+            //$('.H869').hide();
+            //$('#Q869').hide();
+            //$('.H870').hide();
+            //$('#Q870').hide();
         }
         else {
             $('#Q865_2').hide();
@@ -514,12 +514,12 @@
             $('#Q866').show();
             $('.H867').show();
             $('#Q867').show();
-            $('.H868').show();
-            $('#Q868').show();
-            $('.H869').show();
-            $('#Q869').show();
-            $('.H870').show();
-            $('#Q870').show();
+            //$('.H868').show();
+            //$('#Q868').show();
+            //$('.H869').show();
+            //$('#Q869').show();
+            //$('.H870').show();
+            //$('#Q870').show();
         }
     });
 
@@ -838,15 +838,15 @@
             if ($.inArray(ele, hotelSitesArr) === -1) hotelSitesArr.push(ele);
         });
         
+        SetDynamicHotelQues(); //For #Q827
         if (hotelSitesArr.length > 1) {
 
             //Show Up the next questions
             $(".H826").show();
             $("#Q826").show();
-            $('.H827').show();
-            $('#Q827').show();
+            //$('.H827').show();
+            //$('#Q827').show();
 
-            SetDynamicHotelQues(); //For #Q827
             $("#Q826_D1").trigger("click");
             $("#Q826_D2").trigger("click");
             $("#Q826_D3").trigger("click");
@@ -866,19 +866,73 @@
             //Show Up the next questions
             $(".H826").hide();
             $("#Q826").hide();
-            $('.H827').hide();
-            $('#Q827').hide();
+            //$('.H827').hide();
+            //$('#Q827').hide();
         }
     });
+
+    //$(document).on('click', '#Q825_C96', function () {
+    //    $('#Q825_C1').prop('checked', false);
+    //    $('#Q825_C2').prop('checked', false);
+    //    $('#Q825_C3').prop('checked', false);
+    //    $('#Q825_C4').prop('checked', false);
+    //    $('#Q825_C5').prop('checked', false);
+    //    $('#Q825_C6').prop('checked', false);
+    //    $('#Q825_C7').prop('checked', false);
+    //    $('#Q825_C8').prop('checked', false);
+    //    $('#Q825_C9').prop('checked', false);
+    //    $('#Q825_C10').prop('checked', false);
+    //    $('#Q825_C11').prop('checked', false);
+    //    $('#Q825_C12').prop('checked', false);
+    //    $('#Q825_C13').prop('checked', false);
+    //    $('#Q825_C14').prop('checked', false);
+    //    $('#Q825_C15').prop('checked', false);
+
+    //    DublicateHotelArr = [];
+    //    hotelSitesArr = [];
+    //    SetDynamicHotelQues(); //For #Q827
+    //    if (hotelSitesArr.length > 1) {
+
+    //        //Show Up the next questions
+    //        $(".H826").show();
+    //        $("#Q826").show();
+    //        //$('.H827').show();
+    //        //$('#Q827').show();
+
+    //        $("#Q826_D1").trigger("click");
+    //        $("#Q826_D2").trigger("click");
+    //        $("#Q826_D3").trigger("click");
+    //        $("#Q826_D4").trigger("click");
+    //        $("#Q826_D5").trigger("click");
+    //        $("#Q826_D6").trigger("click");
+    //        $("#Q826_D7").trigger("click");
+    //        $("#Q826_D8").trigger("click");
+    //        $("#Q826_D9").trigger("click");
+    //        $("#Q826_D10").trigger("click");
+    //        $("#Q826_D11").trigger("click");
+    //        $("#Q826_D12").trigger("click");
+    //        $("#Q826_D13").trigger("click");
+    //        $("#Q826_D14").trigger("click");
+    //    }
+    //    else {
+    //        //Show Up the next questions
+    //        $(".H826").hide();
+    //        $("#Q826").hide();
+    //        //$('.H827').hide();
+    //        //$('#Q827').hide();
+    //    }
+    //});
 
     function SetDynamicHotelQues(){
         var section = $('#Q827').find('section');
         section.children().remove();
         if (hotelSitesArr.length == 0) {
             $('.H827').hide();
+            $('#Q827').hide();
         }
         else {
             $('.H827').show();
+            $('#Q827').show();
         }
 
         $.each(hotelSitesArr, function (i, p) {
@@ -905,7 +959,6 @@
             myselect.append($('<option></option>').val(i + 1).text(hotelSites[p - 1]));
         });
         $('#Q826_D1').append(myselect.html());
-
     });
         
 

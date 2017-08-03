@@ -1116,3 +1116,15 @@ ul li a{
     padding:0 0 5px 0;
 }
 
+.colBorder{
+    border-right:1px solid;
+    border-color: gray;
+}
+
+.borderGreen {
+    border:2px solid springgreen;
+}
+
+.borderRed {
+    border: 2px solid indianred;
+}
