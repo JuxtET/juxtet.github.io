@@ -13,6 +13,7 @@
 
     $('#Q817').hide();
     $('.H817').hide();
+    $('#Q822').hide();
     $(".H826").hide();
     $("#Q826").hide();
     $('.H827').hide();
@@ -355,12 +356,12 @@
             $('#Q823').hide();
             $('.H824').hide();
             $('#Q824').hide();
-            //$('.H825').hide();
-            //$('#Q825').hide();
-            //$('.H826').hide();
-            //$('#Q826').hide();
-            //$('.H827').hide();
-            //$('#Q827').hide();
+        }
+        else if($selectedValue == 4){
+            $('#Q823').hide();
+            $('#Q822').hide();
+            $('.H824').show();
+            $('#Q824').show();
         }
         else {
             $('#Q822').hide(); // NO Header Hide+
@@ -368,12 +369,6 @@
             $('#Q823').show();
             $('.H824').show();
             $('#Q824').show();
-            //$('.H825').show();
-            //$('#Q825').show();
-            //$('.H826').show();
-            //$('#Q826').show();
-            //$('.H827').show();
-            //$('#Q827').show();
         }
     });
 
@@ -398,12 +393,11 @@
             $('#Q832').hide();
             $('.H833').hide();
             $('#Q833').hide();
-            //$('.H834').hide();
-            //$('#Q834').hide();
-            //$('.H835').hide();
-            //$('#Q835').hide();
-            //$('.H836').hide();
-            //$('#Q836').hide();
+        }
+        else if($selectedValue == 3){
+            $('#Q832').hide();
+            $('#Q831_2').hide();
+
         }
         else {
             $('#Q831_2').hide(); // NO Header Hide+
@@ -411,12 +405,6 @@
             $('#Q832').show();
             $('.H833').show();
             $('#Q833').show();
-            //$('.H834').show();
-            //$('#Q834').show();
-            //$('.H835').show();
-            //$('#Q835').show();
-            //$('.H836').show();
-            //$('#Q836').show();
         }
     });
 
@@ -466,12 +454,12 @@
             $('#Q856').hide();
             $('.H857').hide();
             $('#Q857').hide();
-            //$('.H858').hide();
-            //$('#Q858').hide();
-            //$('.H859').hide();
-            //$('#Q859').hide();
-            //$('.H860').hide();
-            //$('#Q860').hide();
+        }
+        else if($selectedValue == 4){
+            $('#Q856').hide();
+            $('#Q855_1').hide();
+            $('.H857').show();
+            $('#Q857').show();
         }
         else {
             $('#Q855_1').hide();
@@ -480,11 +468,6 @@
             $('#Q856').show();
             $('.H857').show();
             $('#Q857').show();
-            //$('.H858').show();
-            //$('#Q858').show();
-            //$('.H859').show();
-            //$('#Q859').show();
-            //$('#Q860').show();
         }
     });
 
@@ -500,12 +483,12 @@
             $('#Q866').hide();
             $('.H867').hide();
             $('#Q867').hide();
-            //$('.H868').hide();
-            //$('#Q868').hide();
-            //$('.H869').hide();
-            //$('#Q869').hide();
-            //$('.H870').hide();
-            //$('#Q870').hide();
+        }
+        else if($selectedValue == 3){
+            $('#Q866').hide();
+            $('#Q865_2').hide();
+            $('.H867').show();
+            $('#Q867').show();
         }
         else {
             $('#Q865_2').hide();
@@ -514,12 +497,6 @@
             $('#Q866').show();
             $('.H867').show();
             $('#Q867').show();
-            //$('.H868').show();
-            //$('#Q868').show();
-            //$('.H869').show();
-            //$('#Q869').show();
-            //$('.H870').show();
-            //$('#Q870').show();
         }
     });
 
@@ -733,6 +710,15 @@
         }
     });
 
+    $(document).on('change', '#Q875_D1', function () {
+        var val = $('#Q875_D1').val();
+        if (val == 3) {
+            dialog1.dialog("open");
+        }
+        else if (val == 4) {
+            dialog2.dialog("open");
+        }
+    });
 
     //////////////////////////////////////////////////////
 
@@ -838,36 +824,38 @@
             if ($.inArray(ele, hotelSitesArr) === -1) hotelSitesArr.push(ele);
         });
         
-        SetDynamicHotelQues(); //For #Q827
+        //For #Q827 will show even if on option other than NONE & OTHERS is selected
+        //NEED TO implement this in Domestic Travel, International Hotel & travel
+        SetDynamicHotelQues();
+
+        // THese dropdowns will show up when atleast two checkoxes have been checked.
         if (hotelSitesArr.length > 1) {
 
             //Show Up the next questions
             $(".H826").show();
             $("#Q826").show();
-            //$('.H827').show();
-            //$('#Q827').show();
 
-            $("#Q826_D1").trigger("click");
-            $("#Q826_D2").trigger("click");
-            $("#Q826_D3").trigger("click");
-            $("#Q826_D4").trigger("click");
-            $("#Q826_D5").trigger("click");
-            $("#Q826_D6").trigger("click");
-            $("#Q826_D7").trigger("click");
-            $("#Q826_D8").trigger("click");
-            $("#Q826_D9").trigger("click");
-            $("#Q826_D10").trigger("click");
-            $("#Q826_D11").trigger("click");
-            $("#Q826_D12").trigger("click");
-            $("#Q826_D13").trigger("click");
-            $("#Q826_D14").trigger("click");
+            //$("#Q826_D1").trigger("click"); ---- DELETE ALL TRIGGERS
+            //// NEED TO MALKE 3 BINDING FUNCTIONS FOR in Domestic Travel, International Hotel & travel
+            bindDomesticHotelDropDowns('#Q826_D1'); 
+            bindDomesticHotelDropDowns('#Q826_D2');
+            bindDomesticHotelDropDowns('#Q826_D3');
+            bindDomesticHotelDropDowns('#Q826_D4');
+            bindDomesticHotelDropDowns('#Q826_D5');
+            bindDomesticHotelDropDowns('#Q826_D6');
+            bindDomesticHotelDropDowns('#Q826_D7');
+            bindDomesticHotelDropDowns('#Q826_D8');
+            bindDomesticHotelDropDowns('#Q826_D9');
+            bindDomesticHotelDropDowns('#Q826_D10');
+            bindDomesticHotelDropDowns('#Q826_D11');
+            bindDomesticHotelDropDowns('#Q826_D12');
+            bindDomesticHotelDropDowns('#Q826_D13');
+            bindDomesticHotelDropDowns('#Q826_D14');
         }
         else {
             //Show Up the next questions
             $(".H826").hide();
             $("#Q826").hide();
-            //$('.H827').hide();
-            //$('#Q827').hide();
         }
     });
 
@@ -952,14 +940,26 @@
         });
     }
 
-    $("#Q826_D1").on("click", function () {
-        $(this).find("option:not(:first)").remove();
+    //This new generic function made. 
+    function bindDomesticHotelDropDowns(dropdownID) {
+        $(dropdownID).find("option:not(:first)").remove();
         var myselect = $('<select>');
         $.each(hotelSitesArr, function (i, p) {
             myselect.append($('<option></option>').val(i + 1).text(hotelSites[p - 1]));
         });
-        $('#Q826_D1').append(myselect.html());
-    });
+        $(dropdownID).append(myselect.html());
+    }
+    
+    //DELETE ALL BELOW CLICK HANDLERS 
+
+    //$("#Q826_D1").on("click", function () {
+    //    $(this).find("option:not(:first)").remove();
+    //    var myselect = $('<select>');
+    //    $.each(hotelSitesArr, function (i, p) {
+    //        myselect.append($('<option></option>').val(i + 1).text(hotelSites[p - 1]));
+    //    });
+    //    $('#Q826_D1').append(myselect.html());
+    //});
         
 
     $("#Q826_D2").on("click", function () {
