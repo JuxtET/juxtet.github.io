@@ -314,7 +314,7 @@
         }
     });
 
-    $(document).on('click', '#Q814_D1', function () {
+    $(document).on('change', '#Q814_D1', function () {
         var selectedValue = $('#Q814_D1').val();
 
         if (selectedValue == 4) {
@@ -550,28 +550,36 @@
         generateTextBox('Q825_2_C98');
     });
 
-    $(document).on('click', '#Q834_111_1_C98', function () {
-        generateTextBox('Q834_111_1_C98');
+    $(document).on('click', '#Q834_0_C98', function () {
+        generateTextBox('Q834_0_C98');
     });
 
     $(document).on('click', '#Q834_2_C98', function () {
         generateTextBox('Q834_2_C98');
     });
 
-    $(document).on('click', '#Q868_111_1_C98', function () {
-        generateTextBox('Q868_111_1_C98');
+    $(document).on('click', '#Q840_C98', function () {
+        generateTextBox('Q840_C98');
+    });
+    
+    $(document).on('click', '#Q858_1_C98', function () {
+        generateTextBox('Q858_1_C98');
     });
 
     $(document).on('click', '#Q858_2_C98', function () {
         generateTextBox('Q858_2_C98');
     });
 
-    $(document).on('click', '#Q868_1_C98', function () {
-        generateTextBox('Q868_1_C98');
+    $(document).on('click', '#Q868_0_C98', function () {
+        generateTextBox('Q868_0_C98');
     });
 
     $(document).on('click', '#Q868_2_C98', function () {
         generateTextBox('Q868_2_C98');
+    });
+
+    $(document).on('click', '#Q877_C98', function () {
+        generateTextBox('Q877_C98');
     });
 
     ///////////////Dropdown//////////////
@@ -612,8 +620,64 @@
         generateTextBoxForDropDown('Q831_D2', '98');
     });
 
+    $(document).on('click', '#Q839_D1', function () {
+        generateTextBoxForDropDown('Q839_D1', '98');
+    });
+
+    $(document).on('click', '#Q841_D1', function () {
+        generateTextBoxForDropDown('Q841_D1', '98');
+    });
+
+    $(document).on('click', '#Q843_D1', function () {
+        generateTextBoxForDropDown('Q843_D1', '98');
+    });
+
+    $(document).on('click', '#Q846_D1', function () {
+        generateTextBoxForDropDown('Q846_D1', '98');
+    });
+
     $(document).on('click', '#Q848_D1', function () {
         generateTextBoxForDropDown('Q848_D1', '98');
+    });
+
+    $(document).on('click', '#Q853_D1', function () {
+        generateTextBoxForDropDown('Q853_D1', '98');
+    });
+
+    $(document).on('click', '#Q855_1_D1', function () {
+        generateTextBoxForDropDown('Q855_1_D1', '98');
+    });
+
+    $(document).on('click', '#Q862_D1', function () {
+        generateTextBoxForDropDown('Q862_D1', '98');
+    });
+
+    $(document).on('click', '#Q865_D2', function () {
+        generateTextBoxForDropDown('Q865_D2', '98');
+    });
+
+    $(document).on('click', '#Q864_D1', function () {
+        generateTextBoxForDropDown('Q864_D1', '98');
+    });
+
+    $(document).on('click', '#Q871_D1', function () {
+        generateTextBoxForDropDown('Q871_D1', '98');
+    });
+
+    $(document).on('click', '#Q875_D1', function () {
+        generateTextBoxForDropDown('Q875_D1', '98');
+    });
+
+    $(document).on('click', '#Q876_D1', function () {
+        generateTextBoxForDropDown('Q876_D1', '98');
+    });
+
+    $(document).on('click', '#Q880_D1', function () {
+        generateTextBoxForDropDown('Q880_D1', '98');
+    });
+
+    $(document).on('click', '#Q883_D1', function () {
+        generateTextBoxForDropDown('Q883_D1', '98');
     });
 
     $(document).on('click', '#Q885_D1', function () {
@@ -810,9 +874,7 @@
         //    return this.value;
         //}).get();
         if (this.checked == true) {
-            //if (hotelSitesArr.indexOf(this.value) == -1) {
             DublicateHotelArr.push(this.value);
-            //}
         }
         else if (this.checked == false) {
             var index = DublicateHotelArr.indexOf(this.value);
@@ -821,11 +883,31 @@
             }
         }
         
+        $('#Q825_C96').prop('checked', false);
+        setHotelSitesArray();
+    });
+
+    $(document).on('click', '.hotelSitesData2', function () {
+        
+        if (this.checked == true) {
+            DublicateHotelArr.push(this.value);
+        }
+        else if (this.checked == false) {
+            var index = DublicateHotelArr.indexOf(this.value);
+            if (index > -1) {
+                DublicateHotelArr.splice(index, 1);
+            }
+        }
+        $('#Q825_2_C96').prop('checked', false);
+        setHotelSitesArray();
+    });
+
+    function setHotelSitesArray() {
         hotelSitesArr = [];
         $.each(DublicateHotelArr, function (i, ele) {
             if ($.inArray(ele, hotelSitesArr) === -1) hotelSitesArr.push(ele);
         });
-        
+
         //For #Q827 will show even if on option other than NONE & OTHERS is selected
         //NEED TO implement this in Domestic Travel, International Hotel & travel
         SetDynamicHotelQues();
@@ -839,7 +921,7 @@
 
             //$("#Q826_D1").trigger("click"); ---- DELETE ALL TRIGGERS
             //// NEED TO MALKE 3 BINDING FUNCTIONS FOR in Domestic Travel, International Hotel & travel
-            bindDomesticHotelDropDowns('#Q826_D1'); 
+            bindDomesticHotelDropDowns('#Q826_D1');
             bindDomesticHotelDropDowns('#Q826_D2');
             bindDomesticHotelDropDowns('#Q826_D3');
             bindDomesticHotelDropDowns('#Q826_D4');
@@ -859,59 +941,41 @@
             $(".H826").hide();
             $("#Q826").hide();
         }
+    }
+
+    $(document).on('click', '#Q825_C96', function () {
+        if (this.checked == true) {
+            $('#Q825_1_C98').prop('checked', false);
+            $('.Q825_1_C98').hide();
+            $('.hotelSitesData:checked').each(function (index, ele) {
+                var id = $(ele).prop('id');
+                var value = $(ele).prop('value');
+                $(ele).prop('checked', false);
+                var index = DublicateHotelArr.indexOf(value);
+                if (index > -1) {
+                    DublicateHotelArr.splice(index, 1);
+                }
+                setHotelSitesArray();
+            });
+        }
     });
 
-    //$(document).on('click', '#Q825_C96', function () {
-    //    $('#Q825_C1').prop('checked', false);
-    //    $('#Q825_C2').prop('checked', false);
-    //    $('#Q825_C3').prop('checked', false);
-    //    $('#Q825_C4').prop('checked', false);
-    //    $('#Q825_C5').prop('checked', false);
-    //    $('#Q825_C6').prop('checked', false);
-    //    $('#Q825_C7').prop('checked', false);
-    //    $('#Q825_C8').prop('checked', false);
-    //    $('#Q825_C9').prop('checked', false);
-    //    $('#Q825_C10').prop('checked', false);
-    //    $('#Q825_C11').prop('checked', false);
-    //    $('#Q825_C12').prop('checked', false);
-    //    $('#Q825_C13').prop('checked', false);
-    //    $('#Q825_C14').prop('checked', false);
-    //    $('#Q825_C15').prop('checked', false);
-
-    //    DublicateHotelArr = [];
-    //    hotelSitesArr = [];
-    //    SetDynamicHotelQues(); //For #Q827
-    //    if (hotelSitesArr.length > 1) {
-
-    //        //Show Up the next questions
-    //        $(".H826").show();
-    //        $("#Q826").show();
-    //        //$('.H827').show();
-    //        //$('#Q827').show();
-
-    //        $("#Q826_D1").trigger("click");
-    //        $("#Q826_D2").trigger("click");
-    //        $("#Q826_D3").trigger("click");
-    //        $("#Q826_D4").trigger("click");
-    //        $("#Q826_D5").trigger("click");
-    //        $("#Q826_D6").trigger("click");
-    //        $("#Q826_D7").trigger("click");
-    //        $("#Q826_D8").trigger("click");
-    //        $("#Q826_D9").trigger("click");
-    //        $("#Q826_D10").trigger("click");
-    //        $("#Q826_D11").trigger("click");
-    //        $("#Q826_D12").trigger("click");
-    //        $("#Q826_D13").trigger("click");
-    //        $("#Q826_D14").trigger("click");
-    //    }
-    //    else {
-    //        //Show Up the next questions
-    //        $(".H826").hide();
-    //        $("#Q826").hide();
-    //        //$('.H827').hide();
-    //        //$('#Q827').hide();
-    //    }
-    //});
+    $(document).on('click', '#Q825_2_C96', function () {
+        if (this.checked == true) {
+            $('#Q825_2_C98').prop('checked', false);
+            $('.Q825_2_C98').hide();
+            $('.hotelSitesData2:checked').each(function (index, ele) {
+                var id = $(ele).prop('id');
+                var value = $(ele).prop('value');
+                $(ele).prop('checked', false);
+                var index = DublicateHotelArr.indexOf(value);
+                if (index > -1) {
+                    DublicateHotelArr.splice(index, 1);
+                }
+                setHotelSitesArray();
+            });
+        }
+    });
 
     function SetDynamicHotelQues(){
         var section = $('#Q827').find('section');
@@ -979,6 +1043,7 @@
         //var Q834 = $('input:checkbox:checked.Q834').map(function () {
         //    return this.value;
         //}).get();
+        $('#Q834_0_C96').prop('checked', false);
         if (this.checked == true) {
             //if (travelSitesArr.indexOf(this.value) == -1) {
                 dublicateTravelSitesArr.push(this.value);
@@ -990,7 +1055,24 @@
                 dublicateTravelSitesArr.splice(index, 1);
             }
         }
+        setTravelSitesArray();
+    });
 
+    $(document).on('click', '.ticketSitesData2', function () {
+        $('#Q834_2_C96').prop('checked', false);
+        if (this.checked == true) {
+            dublicateTravelSitesArr.push(this.value);
+        }
+        else if (this.checked == false) {
+            var index = dublicateTravelSitesArr.indexOf(this.value);
+            if (index > -1) {
+                dublicateTravelSitesArr.splice(index, 1);
+            }
+        }
+        setTravelSitesArray();
+    });
+
+    function setTravelSitesArray() {
         travelSitesArr = [];
         $.each(dublicateTravelSitesArr, function (i, ele) {
             if ($.inArray(ele, travelSitesArr) === -1) travelSitesArr.push(ele);
@@ -1017,13 +1099,11 @@
             BindDomesticTicketDropdowns("#Q835_D13");
             BindDomesticTicketDropdowns("#Q835_D14");
         }
-        else
-        {
+        else {
             $('.H835').hide();
             $('#Q835').hide();
         }
-
-    });
+    }
 
     function SetDynamicTravelQues() {
         var section = $('#Q836').find('section');
@@ -1062,159 +1142,40 @@
         $(dropdownID).append(myselect.html());
     }
 
-    //$("#Q835_D1").on("click", function () {
-        
-    //});
+    $(document).on('click', '#Q834_0_C96', function () {
+        if (this.checked == true) {
+            $('#Q834_0_C98').prop('checked', false);
+            $('.Q834_0_C98').hide();
+            $('.ticketSitesData:checked').each(function (index, ele) {
+                var id = $(ele).prop('id');
+                var value = $(ele).prop('value');
+                $(ele).prop('checked', false);
+                var index = dublicateTravelSitesArr.indexOf(value);
+                if (index > -1) {
+                    dublicateTravelSitesArr.splice(index, 1);
+                }
+                setTravelSitesArray();
+            });
+        }
+    });
 
-    //$("#Q835_D2").on("click", function () {
-    //    $(this).find("option:not(:first)").remove();
-    //    var myselect = $('<select>');
-    //    $.each(travelSitesArr, function (i, p) {
-    //        myselect.append($('<option></option>').val(i+1).text(travelSites[p-1]));
-    //    });
-    //    $('#Q835_D2').append(myselect.html());
-    //});
+    $(document).on('click', '#Q834_2_C96', function () {
+        if (this.checked == true) {
+            $('#Q834_2_C98').prop('checked', false);
+            $('.Q834_2_C98').hide();
+            $('.ticketSitesData2:checked').each(function (index, ele) {
+                var id = $(ele).prop('id');
+                var value = $(ele).prop('value');
+                $(ele).prop('checked', false);
+                var index = dublicateTravelSitesArr.indexOf(value);
+                if (index > -1) {
+                    dublicateTravelSitesArr.splice(index, 1);
+                }
+                setTravelSitesArray();
+            });
+        }
+    });
 
-    //$("#Q835_D3").on("click", function () {
-    //    $(this).find("option:not(:first)").remove();
-    //    var myselect = $('<select>');
-    //    $.each(travelSitesArr, function (i, p) {
-    //        myselect.append($('<option></option>').val(i+1).text(travelSites[p-1]));
-    //    });
-    //    $('#Q835_D3').append(myselect.html());
-    //});
-
-    //$("#Q835_D4").on("click", function () {
-    //    console.log('populating data');
-    //    console.log(travelSitesArr);
-    //    $(this).find("option:not(:first)").remove();
-    //    var myselect = $('<select>');
-    //    $.each(travelSitesArr, function (i, p) {
-    //        console.log(p);
-    //        myselect.append($('<option></option>').val(i+1).text(travelSites[p-1]));
-    //    });
-    //    $('#Q835_D4').append(myselect.html());
-    //});
-
-    //$("#Q835_D5").on("click", function () {
-    //    console.log('populating data');
-    //    console.log(travelSitesArr);
-    //    $(this).find("option:not(:first)").remove();
-    //    var myselect = $('<select>');
-    //    $.each(travelSitesArr, function (i, p) {
-    //        console.log(p);
-    //        myselect.append($('<option></option>').val(i+1).text(travelSites[p-1]));
-    //    });
-    //    $('#Q835_D5').append(myselect.html());
-    //});
-
-    //$("#Q835_D6").on("click", function () {
-    //    console.log('populating data');
-    //    console.log(travelSitesArr);
-    //    $(this).find("option:not(:first)").remove();
-    //    var myselect = $('<select>');
-    //    $.each(travelSitesArr, function (i, p) {
-    //        console.log(p);
-    //        myselect.append($('<option></option>').val(i+1).text(travelSites[p-1]));
-    //    });
-    //    $('#Q835_D6').append(myselect.html());
-    //});
-
-    //$("#Q835_D7").on("click", function () {
-    //    console.log('populating data');
-    //    console.log(travelSitesArr);
-    //    $(this).find("option:not(:first)").remove();
-    //    var myselect = $('<select>');
-    //    $.each(travelSitesArr, function (i, p) {
-    //        console.log(p);
-    //        myselect.append($('<option></option>').val(i+1).text(travelSites[p-1]));
-    //    });
-    //    $('#Q835_D7').append(myselect.html());
-    //});
-
-    //$("#Q835_D8").on("click", function () {
-    //    console.log('populating data');
-    //    console.log(travelSitesArr);
-    //    $(this).find("option:not(:first)").remove();
-    //    var myselect = $('<select>');
-    //    $.each(travelSitesArr, function (i, p) {
-    //        console.log(p);
-    //        myselect.append($('<option></option>').val(i+1).text(travelSites[p-1]));
-    //    });
-    //    $('#Q835_D8').append(myselect.html());
-    //});
-
-    //$("#Q835_D9").on("click", function () {
-    //    console.log('populating data');
-    //    console.log(travelSitesArr);
-    //    $(this).find("option:not(:first)").remove();
-    //    var myselect = $('<select>');
-    //    $.each(travelSitesArr, function (i, p) {
-    //        console.log(p);
-    //        myselect.append($('<option></option>').val(i+1).text(travelSites[p-1]));
-    //    });
-    //    $('#Q835_D9').append(myselect.html());
-    //});
-
-    //$("#Q835_D10").on("click", function () {
-    //    console.log('populating data');
-    //    console.log(travelSitesArr);
-    //    $(this).find("option:not(:first)").remove();
-    //    var myselect = $('<select>');
-    //    $.each(travelSitesArr, function (i, p) {
-    //        console.log(p);
-    //        myselect.append($('<option></option>').val(i+1).text(travelSites[p-1]));
-    //    });
-    //    $('#Q835_D10').append(myselect.html());
-    //});
-
-    //$("#Q835_D11").on("click", function () {
-    //    console.log('populating data');
-    //    console.log(travelSitesArr);
-    //    $(this).find("option:not(:first)").remove();
-    //    var myselect = $('<select>');
-    //    $.each(travelSitesArr, function (i, p) {
-    //        console.log(p);
-    //        myselect.append($('<option></option>').val(i+1).text(travelSites[p-1]));
-    //    });
-    //    $('#Q835_D11').append(myselect.html());
-    //});
-
-    //$("#Q835_D12").on("click", function () {
-    //    console.log('populating data');
-    //    console.log(travelSitesArr);
-    //    $(this).find("option:not(:first)").remove();
-    //    var myselect = $('<select>');
-    //    $.each(travelSitesArr, function (i, p) {
-    //        console.log(p);
-    //        myselect.append($('<option></option>').val(i+1).text(travelSites[p-1]));
-    //    });
-    //    $('#Q835_D12').append(myselect.html());
-    //});
-
-    //$("#Q835_D13").on("click", function () {
-    //    console.log('populating data');
-    //    console.log(travelSitesArr);
-    //    $(this).find("option:not(:first)").remove();
-    //    var myselect = $('<select>');
-    //    $.each(travelSitesArr, function (i, p) {
-    //        console.log(p);
-    //        myselect.append($('<option></option>').val(i+1).text(travelSites[p-1]));
-    //    });
-    //    $('#Q835_D13').append(myselect.html());
-    //});
-
-    //$("#Q835_D14").on("click", function () {
-    //    console.log('populating data');
-    //    console.log(travelSitesArr);
-    //    $(this).find("option:not(:first)").remove();
-    //    var myselect = $('<select>');
-    //    $.each(travelSitesArr, function (i, p) {
-    //        console.log(p);
-    //        myselect.append($('<option></option>').val(i+1).text(travelSites[p-1]));
-    //    });
-    //    $('#Q835_D14').append(myselect.html());
-    //});
 
 
 
@@ -1247,6 +1208,7 @@
 
     $(document).on('click', '.internationalHotelSitesData', function () {
 
+        $('#Q858_C96').prop('checked', false);
         if (this.checked == true) {
             IntDublicateHotelArr.push(this.value);
         }
@@ -1257,6 +1219,28 @@
             }
         }
 
+        setIntHotelSitesArray();
+        
+    });
+
+    $(document).on('click', '.internationalHotelSitesData2', function () {
+
+        $('#Q858_2_C96').prop('checked', false);
+        if (this.checked == true) {
+            IntDublicateHotelArr.push(this.value);
+        }
+        else if (this.checked == false) {
+            var index = IntDublicateHotelArr.indexOf(this.value);
+            if (index > -1) {
+                IntDublicateHotelArr.splice(index, 1);
+            }
+        }
+
+        setIntHotelSitesArray();
+
+    });
+
+    function setIntHotelSitesArray() {
         InthotelSitesArr = [];
         $.each(IntDublicateHotelArr, function (i, ele) {
             if ($.inArray(ele, InthotelSitesArr) === -1) InthotelSitesArr.push(ele);
@@ -1284,12 +1268,11 @@
             BindIntHotelDropdowns("#Q859_D13");
             BindIntHotelDropdowns("#Q859_D14");
         }
-        else{
+        else {
             $(".H859").hide();
             $("#Q859").hide();
         }
-        
-    });
+    }
 
     function SetDynamicIntHotelQues() {
         var section = $('#Q860').find('section');
@@ -1329,126 +1312,39 @@
         $(dropdownID).append(myselect.html());
     }
 
-    //$("#Q859_D1").on("click", function () {
-        
-    //});
+    $(document).on('click', '#Q858_C96', function () {
+        if (this.checked == true) {
+            $('#Q858_1_C98').prop('checked', false);
+            $('.Q858_1_C98').hide();
+            $('.internationalHotelSitesData:checked').each(function (index, ele) {
+                var id = $(ele).prop('id');
+                var value = $(ele).prop('value');
+                $(ele).prop('checked', false);
+                var index = IntDublicateHotelArr.indexOf(value);
+                if (index > -1) {
+                    IntDublicateHotelArr.splice(index, 1);
+                }
+                setIntHotelSitesArray();
+            });
+        }
+    });
 
-    //$("#Q859_D2").on("click", function () {
-    //    $(this).find("option:not(:first)").remove();
-    //    var myselect = $('<select>');
-    //    $.each(InthotelSitesArr, function (i, p) {
-    //        myselect.append($('<option></option>').val(i + 1).text(InthotelSites[p - 1]));
-    //    });
-    //    $('#Q859_D2').append(myselect.html());
-    //});
-
-    //$("#Q859_D3").on("click", function () {
-    //    $(this).find("option:not(:first)").remove();
-    //    var myselect = $('<select>');
-    //    $.each(InthotelSitesArr, function (i, p) {
-    //        myselect.append($('<option></option>').val(i + 1).text(InthotelSites[p - 1]));
-    //    });
-    //    $('#Q859_D3').append(myselect.html());
-    //});
-
-    //$("#Q859_D4").on("click", function () {
-    //    $(this).find("option:not(:first)").remove();
-    //    var myselect = $('<select>');
-    //    $.each(InthotelSitesArr, function (i, p) {
-    //        myselect.append($('<option></option>').val(i + 1).text(InthotelSites[p - 1]));
-    //    });
-    //    $('#Q859_D4').append(myselect.html());
-    //});
-
-    //$("#Q859_D5").on("click", function () {
-    //    $(this).find("option:not(:first)").remove();
-    //    var myselect = $('<select>');
-    //    $.each(InthotelSitesArr, function (i, p) {
-    //        myselect.append($('<option></option>').val(i + 1).text(InthotelSites[p - 1]));
-    //    });
-    //    $('#Q859_D5').append(myselect.html());
-    //});
-
-    //$("#Q859_D6").on("click", function () {
-    //    $(this).find("option:not(:first)").remove();
-    //    var myselect = $('<select>');
-    //    $.each(InthotelSitesArr, function (i, p) {
-    //        myselect.append($('<option></option>').val(i + 1).text(InthotelSites[p - 1]));
-    //    });
-    //    $('#Q859_D6').append(myselect.html());
-    //});
-
-    //$("#Q859_D7").on("click", function () {
-    //    $(this).find("option:not(:first)").remove();
-    //    var myselect = $('<select>');
-    //    $.each(InthotelSitesArr, function (i, p) {
-    //        myselect.append($('<option></option>').val(i + 1).text(InthotelSites[p - 1]));
-    //    });
-    //    $('#Q859_D7').append(myselect.html());
-    //});
-
-    //$("#Q859_D8").on("click", function () {
-    //    $(this).find("option:not(:first)").remove();
-    //    var myselect = $('<select>');
-    //    $.each(InthotelSitesArr, function (i, p) {
-    //        myselect.append($('<option></option>').val(i + 1).text(InthotelSites[p - 1]));
-    //    });
-    //    $('#Q859_D8').append(myselect.html());
-    //});
-
-    //$("#Q859_D9").on("click", function () {
-    //    $(this).find("option:not(:first)").remove();
-    //    var myselect = $('<select>');
-    //    $.each(InthotelSitesArr, function (i, p) {
-    //        myselect.append($('<option></option>').val(i + 1).text(InthotelSites[p - 1]));
-    //    });
-    //    $('#Q859_D9').append(myselect.html());
-    //});
-
-    //$("#Q859_D10").on("click", function () {
-    //    $(this).find("option:not(:first)").remove();
-    //    var myselect = $('<select>');
-    //    $.each(InthotelSitesArr, function (i, p) {
-    //        myselect.append($('<option></option>').val(i + 1).text(InthotelSites[p - 1]));
-    //    });
-    //    $('#Q859_D10').append(myselect.html());
-    //});
-
-    //$("#Q859_D11").on("click", function () {
-    //    $(this).find("option:not(:first)").remove();
-    //    var myselect = $('<select>');
-    //    $.each(InthotelSitesArr, function (i, p) {
-    //        myselect.append($('<option></option>').val(i + 1).text(InthotelSites[p - 1]));
-    //    });
-    //    $('#Q859_D11').append(myselect.html());
-    //});
-
-    //$("#Q859_D12").on("click", function () {
-    //    $(this).find("option:not(:first)").remove();
-    //    var myselect = $('<select>');
-    //    $.each(InthotelSitesArr, function (i, p) {
-    //        myselect.append($('<option></option>').val(i + 1).text(InthotelSites[p - 1]));
-    //    });
-    //    $('#Q859_D12').append(myselect.html());
-    //});
-
-    //$("#Q859_D13").on("click", function () {
-    //    $(this).find("option:not(:first)").remove();
-    //    var myselect = $('<select>');
-    //    $.each(InthotelSitesArr, function (i, p) {
-    //        myselect.append($('<option></option>').val(i + 1).text(InthotelSites[p - 1]));
-    //    });
-    //    $('#Q859_D13').append(myselect.html());
-    //});
-
-    //$("#Q859_D14").on("click", function () {
-    //    $(this).find("option:not(:first)").remove();
-    //    var myselect = $('<select>');
-    //    $.each(InthotelSitesArr, function (i, p) {
-    //        myselect.append($('<option></option>').val(i + 1).text(InthotelSites[p - 1]));
-    //    });
-    //    $('#Q859_D14').append(myselect.html());
-    //});
+    $(document).on('click', '#Q858_2_C96', function () {
+        if (this.checked == true) {
+            $('#Q858_2_C98').prop('checked', false);
+            $('.Q858_2_C98').hide();
+            $('.internationalHotelSitesData2:checked').each(function (index, ele) {
+                var id = $(ele).prop('id');
+                var value = $(ele).prop('value');
+                $(ele).prop('checked', false);
+                var index = IntDublicateHotelArr.indexOf(value);
+                if (index > -1) {
+                    IntDublicateHotelArr.splice(index, 1);
+                }
+                setIntHotelSitesArray();
+            });
+        }
+    });
 
     //============================= International Ticket Booking -======================================
 
@@ -1475,6 +1371,7 @@
 
     $(document).on('click', '.IntticketSitesData', function () {
 
+        $('#Q868_0_C96').prop('checked', false);
         if (this.checked == true) {
             IntdublicateTravelSitesArr.push(this.value);
         }
@@ -1484,7 +1381,25 @@
                 IntdublicateTravelSitesArr.splice(index, 1);
             }
         }
+        setIntTicketArray();
+    });
 
+    $(document).on('click', '.IntticketSitesData2', function () {
+
+        $('#Q868_2_C96').prop('checked', false);
+        if (this.checked == true) {
+            IntdublicateTravelSitesArr.push(this.value);
+        }
+        else if (this.checked == false) {
+            var index = IntdublicateTravelSitesArr.indexOf(this.value);
+            if (index > -1) {
+                IntdublicateTravelSitesArr.splice(index, 1);
+            }
+        }
+        setIntTicketArray();
+    });
+
+    function setIntTicketArray() {
         InttravelSitesArr = [];
         $.each(IntdublicateTravelSitesArr, function (i, ele) {
             if ($.inArray(ele, InttravelSitesArr) === -1) InttravelSitesArr.push(ele);
@@ -1514,7 +1429,7 @@
             $('.H869').hide();
             $('#Q869').hide();
         }
-    });
+    }
 
     function SetDynamicIntTravelQues() {
         var section = $('#Q870').find('section');
@@ -1553,126 +1468,39 @@
         $(dropdownId).append(myselect.html());
     }
 
-    //$("#Q869_D1").on("click", function () {
-        
-    //});
+    $(document).on('click', '#Q868_0_C96', function () {
+        if (this.checked == true) {
+            $('#Q868_0_C98').prop('checked', false);
+            $('.Q868_0_C98').hide();
+            $('.IntticketSitesData:checked').each(function (index, ele) {
+                var id = $(ele).prop('id');
+                var value = $(ele).prop('value');
+                $(ele).prop('checked', false);
+                var index = IntdublicateTravelSitesArr.indexOf(value);
+                if (index > -1) {
+                    IntdublicateTravelSitesArr.splice(index, 1);
+                }
+                setIntTicketArray();
+            });
+        }
+    });
 
-    //$("#Q869_D2").on("click", function () {
-    //    $(this).find("option:not(:first)").remove();
-    //    var myselect = $('<select>');
-    //    $.each(InttravelSitesArr, function (i, p) {
-    //        myselect.append($('<option></option>').val(i + 1).text(InttravelSites[p - 1]));
-    //    });
-    //    $('#Q869_D2').append(myselect.html());
-    //});
-
-    //$("#Q869_D3").on("click", function () {
-    //    $(this).find("option:not(:first)").remove();
-    //    var myselect = $('<select>');
-    //    $.each(InttravelSitesArr, function (i, p) {
-    //        myselect.append($('<option></option>').val(i + 1).text(InttravelSites[p - 1]));
-    //    });
-    //    $('#Q869_D3').append(myselect.html());
-    //});
-
-    //$("#Q869_D4").on("click", function () {
-    //    $(this).find("option:not(:first)").remove();
-    //    var myselect = $('<select>');
-    //    $.each(InttravelSitesArr, function (i, p) {
-    //        myselect.append($('<option></option>').val(i + 1).text(InttravelSites[p - 1]));
-    //    });
-    //    $('#Q869_D4').append(myselect.html());
-    //});
-
-    //$("#Q869_D5").on("click", function () {
-    //    $(this).find("option:not(:first)").remove();
-    //    var myselect = $('<select>');
-    //    $.each(InttravelSitesArr, function (i, p) {
-    //        myselect.append($('<option></option>').val(i + 1).text(InttravelSites[p - 1]));
-    //    });
-    //    $('#Q869_D5').append(myselect.html());
-    //});
-
-    //$("#Q869_D6").on("click", function () {
-    //    $(this).find("option:not(:first)").remove();
-    //    var myselect = $('<select>');
-    //    $.each(InttravelSitesArr, function (i, p) {
-    //        myselect.append($('<option></option>').val(i + 1).text(InttravelSites[p - 1]));
-    //    });
-    //    $('#Q869_D6').append(myselect.html());
-    //});
-
-    //$("#Q869_D7").on("click", function () {
-    //    $(this).find("option:not(:first)").remove();
-    //    var myselect = $('<select>');
-    //    $.each(InttravelSitesArr, function (i, p) {
-    //        myselect.append($('<option></option>').val(i + 1).text(InttravelSites[p - 1]));
-    //    });
-    //    $('#Q869_D7').append(myselect.html());
-    //});
-
-    //$("#Q869_D8").on("click", function () {
-    //    $(this).find("option:not(:first)").remove();
-    //    var myselect = $('<select>');
-    //    $.each(InttravelSitesArr, function (i, p) {
-    //        myselect.append($('<option></option>').val(i + 1).text(InttravelSites[p - 1]));
-    //    });
-    //    $('#Q869_D8').append(myselect.html());
-    //});
-
-    //$("#Q869_D9").on("click", function () {
-    //    $(this).find("option:not(:first)").remove();
-    //    var myselect = $('<select>');
-    //    $.each(InttravelSitesArr, function (i, p) {
-    //        myselect.append($('<option></option>').val(i + 1).text(InttravelSites[p - 1]));
-    //    });
-    //    $('#Q869_D9').append(myselect.html());
-    //});
-
-    //$("#Q869_D10").on("click", function () {
-    //    $(this).find("option:not(:first)").remove();
-    //    var myselect = $('<select>');
-    //    $.each(InttravelSitesArr, function (i, p) {
-    //        myselect.append($('<option></option>').val(i + 1).text(InttravelSites[p - 1]));
-    //    });
-    //    $('#Q869_D10').append(myselect.html());
-    //});
-
-    //$("#Q869_D11").on("click", function () {
-    //    $(this).find("option:not(:first)").remove();
-    //    var myselect = $('<select>');
-    //    $.each(InttravelSitesArr, function (i, p) {
-    //        myselect.append($('<option></option>').val(i + 1).text(InttravelSites[p - 1]));
-    //    });
-    //    $('#Q869_D11').append(myselect.html());
-    //});
-
-    //$("#Q869_D12").on("click", function () {
-    //    $(this).find("option:not(:first)").remove();
-    //    var myselect = $('<select>');
-    //    $.each(InttravelSitesArr, function (i, p) {
-    //        myselect.append($('<option></option>').val(i + 1).text(InttravelSites[p - 1]));
-    //    });
-    //    $('#Q869_D12').append(myselect.html());
-    //});
-
-    //$("#Q869_D13").on("click", function () {
-    //    $(this).find("option:not(:first)").remove();
-    //    var myselect = $('<select>');
-    //    $.each(InttravelSitesArr, function (i, p) {
-    //        myselect.append($('<option></option>').val(i + 1).text(InttravelSites[p - 1]));
-    //    });
-    //    $('#Q869_D13').append(myselect.html());
-    //});
-
-    //$("#Q869_D14").on("click", function () {
-    //    $(this).find("option:not(:first)").remove();
-    //    var myselect = $('<select>');
-    //    $.each(InttravelSitesArr, function (i, p) {
-    //        myselect.append($('<option></option>').val(i + 1).text(InttravelSites[p - 1]));
-    //    });
-    //    $('#Q869_D14').append(myselect.html());
-    //});
+    $(document).on('click', '#Q868_2_C96', function () {
+        if (this.checked == true) {
+            $('#Q868_2_C98').prop('checked', false);
+            $('.Q868_2_C98').hide();
+            $('.IntticketSitesData2:checked').each(function (index, ele) {
+                var id = $(ele).prop('id');
+                var value = $(ele).prop('value');
+                $(ele).prop('checked', false);
+                var index = IntdublicateTravelSitesArr.indexOf(value);
+                if (index > -1) {
+                    IntdublicateTravelSitesArr.splice(index, 1);
+                }
+                setIntTicketArray();
+            });
+        }
+    });
 
     // =======================================================
     // ==================== Functions ========================
