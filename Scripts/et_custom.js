@@ -39,7 +39,6 @@
     $('#sectionTicket').hide();
     $('#internationalTravel').hide();
     $('#internationalHotelSection').hide();
-    $('#internationalTicketSection').hide();
     $('#futureSection').hide();
     $('.H871').hide();
     $('#Q871').hide();
@@ -425,11 +424,9 @@
         $selectedValue = $('#Q848_D1').val();
         if ($selectedValue == 7) {
             $('#internationalHotelSection').hide();
-            $('#internationalTicketSection').hide();
         }
         else {
             $('#internationalHotelSection').show();
-            $('#internationalTicketSection').show();
         }
     });
 
@@ -443,6 +440,17 @@
         else {
             $('#Q890').hide();
             $('.H890').hide();
+        }
+    });
+
+    $(document).on('change', '#Q852_D1', function () {
+        selectedValue = $('#Q852_D1').val();
+
+        if (selectedValue == 1) {
+            $('#Q853').hide();
+        }
+        else {
+            $('#Q853').show();
         }
     });
 
@@ -474,6 +482,17 @@
     });
 
     ///// International Ticket 
+
+    $(document).on('change', '#Q861_D1', function () {
+        selectedValue = $('#Q861_D1').val();
+
+        if (selectedValue == 1) {
+            $('#Q862').hide();
+        }
+        else {
+            $('#Q862').show();
+        }
+    });
 
     $(document).on('change', '#Q865_D1', function () {
         $selectedValue = $('#Q865_D1').val();
