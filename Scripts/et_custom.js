@@ -805,64 +805,14 @@
         }
     });
 
-    //////////////////////////////////////////////////////
+    $(document).on('click', '#Q877_C15', function () {
+        if (this.checked == true) {
+            $('.tov').prop('checked', false);
+            $('.Q877_C98').hide();
+        }
+    });
 
-    //travelSites = [
-    //    'MakeMyTrip',
-    //    'Thomas Cook',
-    //    'Tripadvisor',
-    //    'Ixigo',
-    //    'Expedia',
-    //    'Paytm',
-    //    'ClearTrip',
-    //    'Yatra',
-    //    'Travelchacha',
-    //    'Ezeego1',
-    //    'Goibibo',
-    //    'EaseMyTrip',
-    //    'Travelguru.com'
-    //]
-
-    //For ayush
-    //$(document).on('click', '.Q834', function () {
-    //    //var Q834 = $('input:checkbox:checked.Q834').map(function () {
-    //    //    alert('hello');
-    //    //    return this.value;
-    //    //}).get();
-    //    if (this.checked == true) {
-    //        if (arr_Q834.indexOf(this.value) == -1) {
-    //            arr_Q834.push(this.value);
-    //        }
-    //        var options = '';
-    //        if (arr_Q834.length != 0) {
-    //            for (var i = 0; i < arr_Q834.length; i++) {
-    //                options += '<option value="' + travelSites[arr_Q834[i] - 1] + '">' + travelSites[arr_Q834[i] - 1] + '</option>';
-    //            }
-    //            $(options).addBack($('.travel_parent')).last();
-    //        }
-    //    }
-    //    else if(this.checked == false) {
-    //        var index = arr_Q834.indexOf(this.value);
-    //        if (index > -1) {
-    //            arr_Q834.splice(index, 1);
-    //        }
-    //        var options = '';
-    //        if (arr_Q834.length != 0) {
-    //            for (var i = 0; i < arr_Q834.length; i++) {
-    //                options += '<option value="' + travelSites[arr_Q834[i] - 1] + '">' + travelSites[arr_Q834[i] - 1] + '</option>';
-    //            }
-    //            $(options).add($('.travel_parent')).last();
-    //        }
-    //    }
-    //var options = '';
-    //if (arr_Q834.length != 0) {
-    //    for (var i = 0; i < arr_Q834.length; i++) {
-    //        options += '<option value="' + travelSites[arr_Q834[i]-1] + '">' + travelSites[arr_Q834[i]-1] + '</option>';
-    //    }
-    //    $(options).insertAfter($('.travel_parent')).last();
-    //}
-        
-    //});
+    /////////////////////////////////////////////////////
 
 
     hotelSites = [
