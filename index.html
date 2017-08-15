@@ -1341,7 +1341,6 @@
                                     <optgroup label="Offline">
                                         <option value="4">Did the booking over the phone</option>
                                         <option value="5">Did the ticketing – over the airlines/ train counter</option>
-                                        <option value="6">Through a travel agent/tour operator</option>
                                     </optgroup>
                                 </select>
                             </section>
@@ -1906,15 +1905,19 @@
                         <section id="Q839" class="form-group col-md-4 col-xs-12 col-sm-4">
                             <select class="style_dd form-control" name="Q839" id="Q839_D1" required="">
                                 <option value="0">Main reason for selecting the place you visited?</option>
-                                <option value="1">It is a good place to go to with children</option>
-                                <option value="2">I heard of the place for long so really wanted to see it.</option>
+                                <option value="1">Good place to go to with children</option>
+                                <option value="2">I heard of the place for so long, I really wanted to see it.</option>
                                 <option value="3">I started thinking about this place after seeing an article/write up/book</option>
                                 <option value="4">I started thinking about this place after seeing its tourism advertisement</option>
                                 <option value="5">My friends / acquaintances had been there & had a positive experience</option>
-                                <option value="6">It offered the kind of travel experience I wanted  </option>
+                                <option value="6">This place offers the kind of travel experience I wanted</option>
                                 <option value="7">It is one of the places I could afford within the budget I had</option>
                                 <option value="8">It is one of the places I could manage within the time I had</option>
-                                <option value="9">I saw a good deal /package</option>
+                                <option value="9">I can see multiple places with a single visa</option>
+                                <option value="10">I already have a multi-visit visa</option>
+                                <option value="11">This is a ‘visa on arrival’ for Indians </option>
+                                <option value="12">I have friends/relatives staying there</option>
+                                <option value="13">I saw a good deal /package</option>
                                 <option value="98">Others</option>
                             </select>
                             <input type="text" name="Q839_1_text" class="Q839_D1 appendTextBox user-success" style="display: none;" />
@@ -3111,7 +3114,7 @@
                                     </optgroup>
                                     <optgroup label="Offline">
                                         <option value="4">Did the booking over the phone</option>
-                                        <option value="5">Did the ticketing – over the airlines/ train counter</option>
+                                        <option value="5">Did the ticketing – over the airlines counter</option>
                                         <option value="6">Through a travel agent/tour operator</option>
                                     </optgroup>
                                 </select>
@@ -3650,6 +3653,22 @@
                 </section>
 
                 <section id="futureSection">
+                    <section id="H891" class="row">
+                        <section class="col-md-12 col-sm-12 col-xs-12 mtb10">
+                            <p id="Q891_que">You may be having a bucket list of places you would list to visit in future. They may be within or outside India.</p>
+                        </section>
+                    </section>
+                    <section id="Q891" class="row">
+                        <section id="Q891_Sec" class="form-group col-md-4 col-sm-4 col-xs-12">
+                            <input type="text" class="form-control autocomplete2 mtb10" placeholder="Search a city" required>
+                        </section>
+                    </section>
+                    <section id="Q891Btn" class="row form-border">
+                        <section class="col-md-4 col-sm-4 col-xs-12 mtb10">
+                            <input type="button" onclick="AddTextbox()" value="Add more cities" />
+                        </section>
+                    </section>
+
                     <section class="row Future_header hideit">
                         <div class="col-md-12 col-xs-12 col-sm-12">
                             <h1 class="red_border">Future Travel</h1>
@@ -3695,8 +3714,11 @@
                     </section>
                     <br>
                     <section class="row">
-                        <section id="Q875" class="form-group col-md-4 col-sm-4 col-xs-12">
-                            <select class="style_dd form-control" name="Q875" id="Q875_D1" required="">
+                        <section id="Q875" class="form-group col-md-3 col-sm-3 col-xs-12">
+                            <input type="text" id="autocomplete" class="Q875_t1 form-control" placeholder="Where to?- City or Town" required>
+                        </section>
+                        <section id="Q876" class="form-group col-md-4 col-sm-4 col-xs-12">
+                            <select class="style_dd form-control" name="Q876" id="Q876_D1" required="">
                                 <option value="0">Why there?</option>
                                 <option value="1">It is a good place to go to with children</option>
                                 <option value="2">I heard of the place for long so really wanted to see it.</option>
@@ -3712,10 +3734,10 @@
                                 <option value="12">I saw a good deal /package</option>
                                 <option value="98">Other</option>
                             </select>
-                            <input type="text" name="Q875_text" class="Q875_D1 appendTextBox" style="display: none;">
+                            <input type="text" name="Q876_text" class="Q876_D1 appendTextBox" style="display: none;">
                         </section>
-                        <section id="Q876" class="form-group col-md-4 col-sm-4 col-xs-12">
-                            <select class="style_dd form-control" name="Q876" id="Q876_D1" required="">
+                        <section id="Q878" class="form-group col-md-4 col-sm-4 col-xs-12">
+                            <select class="style_dd form-control" name="Q878" id="Q878_D1" required="">
                                 <option value="0">Occasion?</option>
                                 <option value="1">Not Yet Decided</option>
                                 <option value="2">Honeymoon</option>
@@ -3725,15 +3747,7 @@
                                 <option value="6">Anniversary</option>
                                 <option value="98">Others</option>
                             </select>
-                            <input type="text" name="Q876_text" class="Q876_D1 appendTextBox" style="display: none;">
-                        </section>
-                        <section id="Q878" class="form-group col-md-3 col-sm-3 col-xs-12">
-                            <!--<select class="style_dd form-control" name="Q878" id="Q878_D1" required="">
-                                <option value="0">Where to?- City or Town</option>
-                                <option value="1">Not Yet Decided</option>
-                                <option value="2">Dynamic Options</option>
-                            </select>-->
-                            <input type="text" id="autocomplete" class="Q878_t1 form-control" placeholder="Where to?- City or Town" onFocus="geolocate()">
+                            <input type="text" name="Q878_text" class="Q878_D1 appendTextBox" style="display: none;">
                         </section>
                     </section>
                     <br>
@@ -4041,7 +4055,8 @@
       // parameter when you first load the API. For example:
       // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 
-      var placeSearch, autocomplete;
+        var placeSearch, autocomplete, autocomplete2;
+        var autocompleteCount = 1;
       var componentForm = {
         street_number: 'short_name',
         route: 'long_name',
@@ -4056,32 +4071,25 @@
         // location types.
         autocomplete = new google.maps.places.Autocomplete(
             /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
-            {types: ['geocode']});
+            { types: ['geocode'] });
+
+        for(var i=0; i<autocompleteCount; i++){
+            new google.maps.places.Autocomplete(
+              /** @type {!HTMLInputElement} */(document.getElementsByClassName('autocomplete2')[i]),
+              { types: ['geocode'] });
+        }
 
         // When the user selects an address from the dropdown, populate the address
         // fields in the form.
         //autocomplete.addListener('place_changed', fillInAddress);
       }
 
-      //function fillInAddress() {
-      //  // Get the place details from the autocomplete object.
-      //  var place = autocomplete.getPlace();
-
-      //  for (var component in componentForm) {
-      //    document.getElementById(component).value = '';
-      //    document.getElementById(component).disabled = false;
-      //  }
-
-      //  // Get each component of the address from the place details
-      //  // and fill the corresponding field on the form.
-      //  for (var i = 0; i < place.address_components.length; i++) {
-      //    var addressType = place.address_components[i].types[0];
-      //    if (componentForm[addressType]) {
-      //      var val = place.address_components[i][componentForm[addressType]];
-      //      document.getElementById(addressType).value = val;
-      //    }
-      //  }
-      //}
+      function AddTextbox() {
+          autocompleteCount += 1;
+          console.log(autocompleteCount);
+          $('#Q891_Sec').append('<input type="text" class="form-control autocomplete2 mtb10" placeholder="Search a city" required>');
+          initAutocomplete();
+      }
 
       // Bias the autocomplete object to the user's geographical location,
       // as supplied by the browser's 'navigator.geolocation' object.
