@@ -691,6 +691,10 @@
         generateTextBoxForDropDown('Q876_D1', '98');
     });
 
+    $(document).on('click', '#Q878_D1', function () {
+        generateTextBoxForDropDown('Q878_D1', '98');
+    });
+
     $(document).on('click', '#Q880_D1', function () {
         generateTextBoxForDropDown('Q880_D1', '98');
     });
