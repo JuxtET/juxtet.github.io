@@ -521,6 +521,17 @@
         }
     });
 
+    $(document).on('change', '#Q880_D1', function () {
+        $selectedValue = $('#Q880_D1').val();
+
+        if($selectedValue == 1 || $selectedValue == 2) {
+            $('#Q881').hide();
+        }
+        else {
+            $('#Q881').show();
+        }
+    });
+
     // =======================================================
     // ================== Generate Textbox ===================
     // =======================================================
@@ -562,18 +573,22 @@
     });
 
     $(document).on('click', '#Q825_1_C98', function () {
+        $('#Q825_C96').prop('checked', false);
         generateTextBox('Q825_1_C98');
     });
 
     $(document).on('click', '#Q825_2_C98', function () {
+        $('#Q825_2_C96').prop('checked', false);
         generateTextBox('Q825_2_C98');
     });
 
     $(document).on('click', '#Q834_0_C98', function () {
+        $('#Q834_0_C96').prop('checked', false);
         generateTextBox('Q834_0_C98');
     });
 
     $(document).on('click', '#Q834_2_C98', function () {
+        $('#Q834_2_C96').prop('checked', false);
         generateTextBox('Q834_2_C98');
     });
 
@@ -582,18 +597,22 @@
     });
     
     $(document).on('click', '#Q858_1_C98', function () {
+        $('#Q858_C96').prop('checked', false);
         generateTextBox('Q858_1_C98');
     });
 
     $(document).on('click', '#Q858_2_C98', function () {
+        $('#Q858_2_C96').prop('checked', false);
         generateTextBox('Q858_2_C98');
     });
 
     $(document).on('click', '#Q868_0_C98', function () {
+        $('#Q868_0_C96').prop('checked', false);
         generateTextBox('Q868_0_C98');
     });
 
     $(document).on('click', '#Q868_2_C98', function () {
+        $('#Q868_2_C96').prop('checked', false);
         generateTextBox('Q868_2_C98');
     });
 
@@ -799,8 +818,8 @@
         }
     });
 
-    $(document).on('change', '#Q875_D1', function () {
-        var val = $('#Q875_D1').val();
+    $(document).on('change', '#Q876_D1', function () {
+        var val = $('#Q876_D1').val();
         if (val == 3) {
             dialog1.dialog("open");
         }
