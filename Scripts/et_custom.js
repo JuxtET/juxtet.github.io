@@ -989,6 +989,7 @@
         });
         section.children().each(function () {
             $("<select class='style_dd form-control' style='margin-top:5px;' name='Q827_1' id='Q827_D1' required=''>"
+                        + "<option value='0'>Select</option>"
                         + "<option value='1'>Very likely to recommend</option>"
                         + "<option value='2'>May recommend</option>"
                         + "<option value='3'>May /may not recommend</option>"
@@ -1116,6 +1117,7 @@
         });
         section.children().each(function () {
             $("<select class='style_dd form-control' style='margin-top:5px;' name='Q836_1' id='Q836_D1' required=''>"
+                        + "<option value='0'>Select</option>"
                         + "<option value='1'>Very likely to recommend</option>"
                         + "<option value='2'>May recommend</option>"
                         + "<option value='3'>May /may not recommend</option>"
@@ -1286,6 +1288,7 @@
         });
         section.children().each(function () {
             $("<select class='style_dd form-control' style='margin-top:5px;' name='Q860_1' id='Q860_D1' required=''>"
+                        + "<option value='0'>Select</option>"
                         + "<option value='1'>Very likely to recommend</option>"
                         + "<option value='2'>May recommend</option>"
                         + "<option value='3'>May /may not recommend</option>"
@@ -1442,6 +1445,7 @@
         });
         section.children().each(function () {
             $("<select class='style_dd form-control' style='margin-top:5px;' name='Q870_1' id='Q870_D1' required=''>"
+                        + "<option value='0'>Select</option>"
                         + "<option value='1'>Very likely to recommend</option>"
                         + "<option value='2'>May recommend</option>"
                         + "<option value='3'>May /may not recommend</option>"
